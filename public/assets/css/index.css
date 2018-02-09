@@ -1,0 +1,209 @@
+.warp {
+  width: 100%;
+  display: block;
+}
+.warp .banner {
+  width: 100%;
+  height: 500px;
+  display: block;
+  position: relative;
+  margin-bottom: 90px;
+}
+.warp .banner .img {
+  width: 100%;
+  height: 500px;
+  display: block;
+  overflow: hidden;
+}
+.warp .banner .img li {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.warp .banner .img li img {
+  width: 1450px;
+  height: 500px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+.warp .banner .img .active {
+  display: block;
+}
+.warp .banner .nav-img {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+.warp .banner .nav-img li {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+  background: #fff;
+  border-radius: 50%;
+  float: left;
+  cursor: pointer;
+}
+.warp .banner .nav-img .active {
+  background: #0195eb;
+}
+.warp .inner {
+  width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+}
+.warp .inner .t1 {
+  width: 100%;
+  margin-bottom: 103px;
+}
+.warp .inner .t1 .title-img {
+  width: 600px;
+  display: block;
+  float: left;
+}
+.warp .inner .t1 .title-img .img1 {
+  border: 2px solid #0088ff;
+  border-right: 0px;
+  margin-right: 20px;
+  padding: 14px;
+  box-sizing: border-box;
+  width: 280px;
+  height: 320px;
+  float: left;
+}
+.warp .inner .t1 .title-img .img1 img {
+  width: 250px;
+  height: 290px;
+}
+.warp .inner .t1 .title-img .img2 {
+  border: 2px solid #ccc;
+  border-left: 0px;
+  padding: 14px;
+  box-sizing: border-box;
+  width: 280px;
+  height: 320px;
+  float: left;
+}
+.warp .inner .t1 .title-img .img2 img {
+  width: 250px;
+  height: 290px;
+}
+.warp .inner .t1 .title-content {
+  width: 600px;
+  float: right;
+}
+.warp .inner .t1 .title-content .title {
+  line-height: 40px;
+  border-bottom: 2px solid #ccc;
+  height: 40px;
+  position: relative;
+}
+.warp .inner .t1 .title-content .title .sp1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0088ff;
+  margin-left: 20px;
+}
+.warp .inner .t1 .title-content .title .sp2 {
+  font-size: 17px;
+  color: #ccc;
+  margin-left: 10px;
+}
+.warp .inner .t1 .title-content .title a {
+  font-size: 14px;
+  color: #ccc;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.warp .inner .t1 .title-content ul {
+  width: 100%;
+}
+.warp .inner .t1 .title-content ul li {
+  list-style: disc;
+  display: block;
+  list-style: circle;
+  line-height: 35px;
+  color: black;
+  font-size: 14px;
+  height: 35px;
+}
+.warp .inner .t1 .title-content ul li a {
+  margin-left: 20px;
+  display: block;
+  float: left;
+}
+.warp .inner .t1 .title-content ul li i {
+  margin-right: 20px;
+  display: block;
+  float: right;
+}
+.warp .inner .t2 {
+  width: 100%;
+  margin-bottom: 100px;
+}
+.warp .inner .t2 .title-content-item {
+  width: 470px;
+  display: block;
+}
+.warp .inner .t2 .title-content-item .title {
+  line-height: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: 10px 10px 0px 0px;
+}
+.warp .inner .t2 .title-content-item .title .sp1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 40px;
+}
+.warp .inner .t2 .title-content-item .title .sp2 {
+  font-size: 17px;
+  color: #ccc;
+  margin-left: 10px;
+}
+.warp .inner .t2 .title-content-item ul {
+  width: 100%;
+}
+.warp .inner .t2 .title-content-item ul li {
+  list-style: disc;
+  display: block;
+  list-style: circle;
+  line-height: 35px;
+  color: black;
+  font-size: 14px;
+  height: 35px;
+}
+.warp .inner .t2 .title-content-item ul li a {
+  margin-left: 40px;
+  display: block;
+  float: left;
+}
+.warp .inner .t2 .title-content-left {
+  float: left;
+  margin-left: 110px;
+}
+.warp .inner .t2 .title-content-left .title {
+  background: #23ac3a;
+}
+.warp .inner .t2 .title-content-left ul {
+  border: 2px solid #23ac3a;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+.warp .inner .t2 .title-content-right {
+  float: right;
+  margin-right: 110px;
+}
+.warp .inner .t2 .title-content-right .title {
+  background: #f29700;
+}
+.warp .inner .t2 .title-content-right ul {
+  border: 2px solid #f29700;
+  box-sizing: border-box;
+  padding-top: 20px;
+}

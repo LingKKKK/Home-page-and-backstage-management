@@ -1,0 +1,155 @@
+.top {
+  height: 83px;
+  width: 100%;
+  display: block;
+  background: linear-gradient(to right, #3b80db, #2e5fa4);
+  margin-top: 37px;
+}
+.top .inner {
+  width: 1280px;
+  height: 83px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.top .inner .logo {
+  width: 250px;
+  height: 83px;
+  transform: skew(-30deg);
+  background-color: #fff;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+}
+.top .inner .logo img {
+  display: block;
+  width: 200px;
+  transform: skew(30deg) translateY(-10px);
+  margin: 0 auto;
+}
+.top .inner .nav {
+  display: block;
+  margin-left: 130px;
+  display: block;
+  float: right;
+}
+.top .inner .nav li {
+  display: block;
+  float: left;
+  position: relative;
+}
+.top .inner .nav li a {
+  padding: 0px 30px;
+  color: #fff;
+  display: block;
+  line-height: 83px;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+  font-size: 14px;
+}
+.top .inner .nav li .two-level {
+  position: absolute;
+  left: 0px;
+  top: 83px;
+  width: 120px;
+  background: #0088ff;
+  display: none;
+}
+.top .inner .nav li .two-level li {
+  width: 100%;
+  display: block;
+  line-height: 42px;
+  color: #fff;
+  font-size: 14px;
+  background: #0097ea;
+}
+.top .inner .nav li .two-level li a {
+  line-height: 42px;
+  cursor: pointer;
+}
+.top .inner .nav li .two-level li:hover {
+  background: #3e81dc;
+}
+.top .inner .nav .active {
+  background: #0097ea;
+}
+.top .inner .nav .active .two-level {
+  display: block;
+}
+.top .inner .user-dialog {
+  display: block;
+  position: absolute;
+  right: 27px;
+  top: -37px;
+}
+.top .inner .user-dialog .noLogin a {
+  color: #0088ff;
+  display: block;
+  line-height: 37px;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+  font-size: 14px;
+  float: left;
+}
+.top .inner .user-dialog .noLogin i {
+  color: #0088ff;
+  display: block;
+  line-height: 37px;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+  font-size: 14px;
+  float: left;
+}
+
+.footer {
+  background-color: #323232;
+  padding: 30px 0;
+  width: 100%;
+  height: 170px;
+}
+.footer .inner {
+  width: 1280px;
+  height: 170px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.footer .inner .link {
+  text-align: center;
+}
+.footer .inner .link ul {
+  display: inline-block;
+  font-size: 14px;
+  overflow: hidden;
+}
+.footer .inner .link ul li {
+  float: left;
+  padding: 0 15px;
+  border-left: 1px solid #FFFFFF;
+}
+.footer .inner .link ul li a {
+  color: #FFFFFF;
+  display: block;
+  line-height: 16px;
+}
+.footer .inner .link ul:first-child {
+  border-left: none;
+}
+.footer .inner #reldescript {
+  width: auto;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+}
+.footer .inner #reldescript span {
+  text-align: center;
+  line-height: 35px;
+}
+.footer .inner .code {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  width: 100%;
+  width: 200px;
+}
