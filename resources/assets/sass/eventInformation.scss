@@ -1,0 +1,107 @@
+.warp {
+    width: 1280px;
+    margin: 0 auto;
+
+    .banner {
+        width: 1280px;
+        height: 500px;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+            height: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .info {
+        width: 1280px;
+        margin: 0 auto;
+        margin-top: 60px;
+
+        .left {
+            width: 200px;
+            display: block;
+            float: left;
+            margin-left: 200px;
+
+            .title {
+                line-height: 27px;
+                height: 27px;
+                color: #26517e;
+                font-size: 27px;
+                font-weight: bolder;
+            }
+
+            .info-nav {
+                width: 100px;
+                margin-top: 40px;
+
+                li {
+                    line-height: 64px;
+                    color: black;
+                    background: #fff;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: bolder;
+                    cursor: pointer;
+                }
+
+                .active {
+                    color: #fff;
+                    background: #0088ff;
+                }
+            }
+        }
+
+        .right {
+            display: block;
+            float: left;
+            width: 700px;
+
+            .box {
+                width: 100%;
+                display: none;
+                padding-bottom: 60px;
+
+                ul {
+                    width: 100%;
+
+                    li {
+                        width: 100%;
+                        display: block;
+                        padding: 20px 0px;
+                        border-bottom: 1px solid #ccc;
+
+                        img {
+                            width: 240px;
+                            height: 140px;
+                            display: block;
+                            float: left;
+                            margin-right: 32px;
+                        }
+
+                        .sp1 {
+                            color: #0088ff;
+                            font-size: 14px;
+                            font-weight: bolder;
+                        }
+
+                        .sp2 {
+                            display: block;
+                            margin-top: 10px;
+                            line-height: 15px;
+                        }
+                    }
+                }
+            }
+
+            .active {
+                display: block;
+            }
+        }
+    }
+}

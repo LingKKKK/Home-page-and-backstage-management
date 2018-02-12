@@ -1,0 +1,91 @@
+.warp {
+  width: 1280px;
+  margin: 0 auto;
+}
+.warp .banner {
+  width: 1280px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.warp .banner img {
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.warp .info {
+  width: 1280px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.warp .info .left {
+  width: 200px;
+  display: block;
+  float: left;
+  margin-left: 200px;
+}
+.warp .info .left .title {
+  line-height: 27px;
+  height: 27px;
+  color: #26517e;
+  font-size: 27px;
+  font-weight: bolder;
+}
+.warp .info .left .info-nav {
+  width: 100px;
+  margin-top: 40px;
+}
+.warp .info .left .info-nav li {
+  line-height: 64px;
+  color: black;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.warp .info .left .info-nav .active {
+  color: #fff;
+  background: #0088ff;
+}
+.warp .info .right {
+  display: block;
+  float: left;
+  width: 700px;
+}
+.warp .info .right .box {
+  width: 100%;
+  display: none;
+  padding-bottom: 60px;
+}
+.warp .info .right .box ul {
+  width: 100%;
+}
+.warp .info .right .box ul li {
+  width: 100%;
+  display: block;
+  padding: 20px 0px;
+  border-bottom: 1px solid #ccc;
+}
+.warp .info .right .box ul li img {
+  width: 240px;
+  height: 140px;
+  display: block;
+  float: left;
+  margin-right: 32px;
+}
+.warp .info .right .box ul li .sp1 {
+  color: #0088ff;
+  font-size: 14px;
+  font-weight: bolder;
+}
+.warp .info .right .box ul li .sp2 {
+  display: block;
+  margin-top: 10px;
+  line-height: 15px;
+}
+.warp .info .right .active {
+  display: block;
+}

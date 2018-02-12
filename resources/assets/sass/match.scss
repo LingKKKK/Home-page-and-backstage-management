@@ -1,0 +1,111 @@
+.warp {
+    width: 1280px;
+    margin: 0 auto;
+
+    .banner {
+        width: 1280px;
+        height: 500px;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+            height: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .info {
+        width: 1280px;
+        margin: 0 auto;
+        margin-top: 60px;
+
+        .left {
+            width: 200px;
+            display: block;
+            float: left;
+            margin-left: 200px;
+
+            .title {
+                line-height: 27px;
+                height: 27px;
+                color: #26517e;
+                font-size: 27px;
+                font-weight: bolder;
+            }
+
+            .info-nav {
+                width: 100px;
+                margin-top: 40px;
+
+                li {
+                    line-height: 64px;
+                    color: black;
+                    background: #fff;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: bolder;
+                    cursor: pointer;
+                }
+
+                .active {
+                    color: #fff;
+                    background: #0088ff;
+                }
+            }
+        }
+
+        .right {
+            display: block;
+            float: left;
+            width: 700px;
+            padding-bottom: 100px;
+
+            .box {
+                width: 100%;
+                display: none;
+                padding-bottom: 60px;
+
+                ul {
+                    width: 100%;
+
+                    li {
+                        width: 200px;
+                        display: block;
+                        float: left;
+                        margin-right: 30px;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .sp1 {
+                            color: black;
+                            display: block;
+                            line-height: 30px;
+                            font-size: 12px;
+                        }
+
+                        .sp2 {
+                            color: black;
+                            display: block;
+                            line-height: 30px;
+                            font-size: 12px;
+                        }
+
+                        .sp3 {
+                            color: black;
+                            float: right;
+                        }
+                    }
+                }
+            }
+
+            .active {
+                display: block;
+            }
+        }
+    }
+}

@@ -18,30 +18,25 @@
             </div>
             <ul class="nav">
                 <li class="active">
-                    <a href="#">首页</a>
+                    <a href="/">首页</a>
                 </li>
                 <li>
-                    <a href="#">赛事信息</a>
-                    <ul class="two-level">
-                        <li><a>赛事动态</a></li>
-                        <li><a>赛事介绍</a></li>
-                        <li><a>赛事相关</a></li>
+                    <a href="/eventInformation#trends">赛事信息</a>
+                    <ul class="two-level" style="z-index: 999;">
+                        <li><a href="/eventInformation#trends">赛事动态</a></li>
+                        <li><a href="/eventInformation#intro">赛事介绍</a></li>
+                        <li><a href="/eventInformation#about">赛事相关</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">参赛报名</a>
-                    <ul class="two-level">
-                        <li><a>参赛报名</a></li>
-                        <li><a>公示公告</a></li>
+                    <a href="/match#signup">参赛报名</a>
+                    <ul class="two-level" style="z-index: 999;">
+                        <li><a href="/match#signup">参赛报名</a></li>
+                        <li><a href="/match#notice">公示公告</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">水平测试</a>
-                    <ul class="two-level" style="display: none;">
-                        <li><a>赛事动态</a></li>
-                        <li><a>赛事介绍</a></li>
-                        <li><a>赛事相关</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#">资源下载</a>
@@ -51,7 +46,7 @@
                 </li>
                 <li>
                     <a href="#">关于我们</a>
-                    <ul class="two-level">
+                    <ul class="two-level" style="z-index: 999;">
                         <li><a>品牌介绍</a></li>
                         <li><a>联系我们</a></li>
                     </ul>

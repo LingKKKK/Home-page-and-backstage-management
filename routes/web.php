@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('homepage.index');
 });
+// 赛事信息
+Route::get('/eventInformation', function () {
+    return view('homepage.eventInformation');
+});
+// 参赛报名
+Route::get('/match', function () {
+    return view('homepage.match');
+});

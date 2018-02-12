@@ -48,6 +48,7 @@
   font-size: 14px;
 }
 .top .inner .nav li .two-level {
+  z-index: 999;
   position: absolute;
   left: 0px;
   top: 83px;
@@ -74,6 +75,7 @@
   background: #0097ea;
 }
 .top .inner .nav .active .two-level {
+  z-index: 999;
   display: block;
 }
 .top .inner .user-dialog {
