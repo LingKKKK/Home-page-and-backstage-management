@@ -235,6 +235,16 @@
                     border: 2px solid #23ac3a;
                     box-sizing: border-box;
                     padding-top: 20px;
+                    position: relative;
+
+                    .more-click {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 20px;
+                        color: #666;
+                        line-height: 20px;
+                        font-size: 12px;
+                    }
                 }
             }
 
@@ -250,6 +260,16 @@
                     border: 2px solid #f29700;
                     box-sizing: border-box;
                     padding-top: 20px;
+                    position: relative;
+
+                    .more-click {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 20px;
+                        color: #666;
+                        line-height: 20px;
+                        font-size: 12px;
+                    }
                 }
             }
         }
