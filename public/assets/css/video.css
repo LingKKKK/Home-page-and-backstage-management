@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 .warp .banner {
-  width: 1280px;
+  width: 1270px;
   height: 500px;
   display: block;
   margin: 0 auto;
@@ -15,8 +15,29 @@
   display: block;
   margin: 0 auto;
 }
-.warp .info {
+.warp .video-box {
   padding: 0px 0px 100px 0px;
   width: 1000px;
   margin: 0 auto;
+}
+.warp .video-box .obox {
+  display: block;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  background: #f2f2f2;
+  width: 200px;
+  cursor: pointer;
+}
+.warp .video-box .obox img {
+  width: 200px;
+  height: 120px;
+  display: block;
+}
+.warp .video-box .obox span {
+  line-height: 20px;
+  height: 20px;
+  width: 200px;
+  text-align: center;
+  display: block;
 }

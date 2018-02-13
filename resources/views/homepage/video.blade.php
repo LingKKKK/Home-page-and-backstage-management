@@ -3,16 +3,19 @@
 @section('content')
     <link rel="stylesheet" href="assets/css/video.css">
 
-    <div class="warp" style="min-height: 671px;">
+    <div class="warp clearfix" style="min-height: 671px;">
         <div class="banner">
             <img src="assets/img/index/banner_2.jpg">
         </div>
-        <div class="info">
-        <!--     <div class="obox">
-                <img class="img1" src="assets/img/index/banner_1.jpg">
-                <span class="sp1">机器人精彩看点:现场直播视频</span> -->
-                <!-- <img class="img2" src="assets/img/index/"> -->
-        <!--     </div> -->
+        <div class="video-box">
+            <div class="obox">
+                <img class="img1" src="assets/img/index/banner_1.jpg" style="width: 200px;height: 120px;display: block;">
+                <span class="sp1">机器人精彩看点:现场直播视频</span>
+            </div>
+            <div class="obox">
+                <img class="img1" src="assets/img/index/banner_1.jpg" style="width: 200px;height: 120px;display: block;">
+                <span class="sp1">机器人精彩看点:现场直播视频</span>
+            </div>
         </div>
     </div>
 

@@ -2,19 +2,72 @@
   width: 1280px;
   margin: 0 auto;
 }
-.warp .banner {
+.warp .info .logo-c {
   width: 1280px;
-  height: 500px;
-  display: block;
+  height: 300px;
   margin: 0 auto;
-  overflow: hidden;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  border: 1px solid #ccc;
 }
-.warp .banner img {
-  height: 500px;
+.warp .info .logo-c span {
+  line-height: 300px;
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
   display: block;
-  margin: 0 auto;
 }
-.warp .info {
-  padding: 0px 0px 100px 0px;
+.warp .cut {
+  width: 100%;
+  height: 1px;
+  background: #666;
+  margin: 50px 0px;
+}
+.warp .type {
+  width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.warp .type .left {
+  width: 200px;
+  display: block;
+  float: left;
+  margin-left: 200px;
+}
+.warp .type .left .title {
+  line-height: 27px;
+  height: 27px;
+  color: #26517e;
+  font-size: 27px;
+  font-weight: bolder;
+}
+.warp .type .left .info-nav {
+  width: 100px;
+  margin-top: 40px;
+}
+.warp .type .left .info-nav li {
+  line-height: 64px;
+  color: black;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.warp .type .left .info-nav .active {
+  color: #fff;
+  background: #0088ff;
+}
+.warp .type .right {
+  display: block;
+  float: left;
+  width: 700px;
+}
+.warp .type .right .box {
+  width: 100%;
+  display: none;
+  padding-bottom: 60px;
+}
+.warp .type .right .active {
+  display: block;
 }

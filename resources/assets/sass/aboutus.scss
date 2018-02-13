@@ -2,24 +2,102 @@
     width: 1280px;
     margin: 0 auto;
 
-    .banner {
-        width: 1280px;
-        height: 500px;
-        display: block;
-        margin: 0 auto;
-        overflow: hidden;
-        margin-bottom: 40px;
+    // .banner {
+    //     width: 1280px;
+    //     height: 500px;
+    //     display: block;
+    //     margin: 0 auto;
+    //     overflow: hidden;
+    //     margin-bottom: 40px;
 
-        img {
-            height: 500px;
-            display: block;
+    //     img {
+    //         height: 500px;
+    //         display: block;
+    //         margin: 0 auto;
+    //     }
+    // }
+
+    .info {
+
+        .logo-c {
+            width: 1280px;
+            height: 300px;
             margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid #ccc;
+
+            span {
+                line-height: 300px;
+                font-size: 30px;
+                font-weight: bolder;
+                text-align: center;
+                display: block;
+            }
         }
     }
 
-    .info {
-        padding: 0px 0px 100px 0px;
+    .cut {
+        width: 100%;
+        height: 1px;
+        background: #666;
+        margin: 50px 0px;
+    }
 
+    .type {
+        width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 50px;
 
+        .left {
+            width: 200px;
+            display: block;
+            float: left;
+            margin-left: 200px;
+
+            .title {
+                line-height: 27px;
+                height: 27px;
+                color: #26517e;
+                font-size: 27px;
+                font-weight: bolder;
+            }
+
+            .info-nav {
+                width: 100px;
+                margin-top: 40px;
+
+                li {
+                    line-height: 64px;
+                    color: black;
+                    background: #fff;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: bolder;
+                    cursor: pointer;
+                }
+
+                .active {
+                    color: #fff;
+                    background: #0088ff;
+                }
+            }
+        }
+
+        .right {
+            display: block;
+            float: left;
+            width: 700px;
+
+            .box {
+                width: 100%;
+                display: none;
+                padding-bottom: 60px;
+            }
+
+            .active {
+                display: block;
+            }
+        }
     }
 }

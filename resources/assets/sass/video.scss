@@ -3,7 +3,7 @@
     margin: 0 auto;
 
     .banner {
-        width: 1280px;
+        width: 1270px;
         height: 500px;
         display: block;
         margin: 0 auto;
@@ -17,23 +17,33 @@
         }
     }
 
-    .info {
+    .video-box {
         padding: 0px 0px 100px 0px;
         width: 1000px;
         margin: 0 auto;
 
-        // .obox {
-        //     display: block;
-        //     float: left;
-        //     margin-right: 30px;
-        //     margin-bottom: 30px;
-        //     background: #f2f2f2;
+        .obox {
+            display: block;
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            background: #f2f2f2;
+            width: 200px;
+            cursor: pointer;
 
-        //     img {
-        //         width: 200px;
-        //         height: 120px;
-        //         display: block;
-        //     }
-        // }
+            img {
+                width: 200px;
+                height: 120px;
+                display: block;
+            }
+
+            span {
+                line-height: 20px;
+                height: 20px;
+                width: 200px;
+                text-align: center;
+                display: block;
+            }
+        }
     }
 }
