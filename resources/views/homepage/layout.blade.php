@@ -39,16 +39,16 @@
                     <a href="#">水平测试</a>
                 </li>
                 <li>
-                    <a href="#">资源下载</a>
+                    <a href="/doc">资源下载</a>
                 </li>
                 <li>
-                    <a href="#">视频资源</a>
+                    <a href="/video">视频资源</a>
                 </li>
                 <li>
-                    <a href="#">关于我们</a>
+                    <a href="/aboutus">关于我们</a>
                     <ul class="two-level" style="z-index: 999;">
-                        <li><a>品牌介绍</a></li>
-                        <li><a>联系我们</a></li>
+                        <li><a href="/aboutus#intro">品牌介绍</a></li>
+                        <li><a href="/aboutus#us">联系我们</a></li>
                     </ul>
                 </li>
             </ul>

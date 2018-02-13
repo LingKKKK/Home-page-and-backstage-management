@@ -1,0 +1,20 @@
+.warp {
+  width: 1280px;
+  margin: 0 auto;
+}
+.warp .banner {
+  width: 1280px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.warp .banner img {
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.warp .info {
+  padding: 0px 0px 100px 0px;
+}

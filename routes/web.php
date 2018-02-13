@@ -22,3 +22,15 @@ Route::get('/eventInformation', function () {
 Route::get('/match', function () {
     return view('homepage.match');
 });
+// 资源下载
+Route::get('/doc', function () {
+    return view('homepage.doc');
+});
+// 视频资源
+Route::get('/video', function () {
+    return view('homepage.video');
+});
+// 关于我们
+Route::get('/aboutus', function () {
+    return view('homepage.aboutus');
+});

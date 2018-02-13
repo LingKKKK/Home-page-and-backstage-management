@@ -1,0 +1,39 @@
+.warp {
+    width: 1280px;
+    margin: 0 auto;
+
+    .banner {
+        width: 1280px;
+        height: 500px;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-bottom: 40px;
+
+        img {
+            height: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .info {
+        padding: 0px 0px 100px 0px;
+        width: 1000px;
+        margin: 0 auto;
+
+        // .obox {
+        //     display: block;
+        //     float: left;
+        //     margin-right: 30px;
+        //     margin-bottom: 30px;
+        //     background: #f2f2f2;
+
+        //     img {
+        //         width: 200px;
+        //         height: 120px;
+        //         display: block;
+        //     }
+        // }
+    }
+}
