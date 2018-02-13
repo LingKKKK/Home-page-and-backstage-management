@@ -9,7 +9,7 @@
         </div>
         <div class="info clearfix">
             <div class="left">
-                <span class="title">赛事信息</span>
+                <span class="title">参赛报名</span>
                 <ul class="info-nav clearfix">
                     <li class="active">参赛报名</li>
                     <li>公示公告</li>

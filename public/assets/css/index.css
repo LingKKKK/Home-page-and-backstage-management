@@ -168,6 +168,7 @@
 }
 .warp .inner .t2 .title-content-item ul {
   width: 100%;
+  position: relative;
 }
 .warp .inner .t2 .title-content-item ul li {
   list-style: disc;
@@ -182,6 +183,14 @@
   margin-left: 40px;
   display: block;
   float: left;
+}
+.warp .inner .t2 .title-content-item ul .more-click {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #666;
+  line-height: 20px;
+  font-size: 12px;
 }
 .warp .inner .t2 .title-content-left {
   float: left;
@@ -206,4 +215,34 @@
   border: 2px solid #f29700;
   box-sizing: border-box;
   padding-top: 20px;
+}
+.warp .parter {
+  background: url(/assets/img/index/bg01.jpg) no-repeat center top;
+  padding-bottom: 50px;
+}
+.warp .parter .title {
+  padding-top: 70px;
+  text-align: center;
+}
+.warp .parter .title h4 {
+  font-size: 24px;
+  color: #686868;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.warp .parter .title p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #929292;
+}
+.warp .parter .lunbo {
+  margin-top: 20px;
+}
+.warp .parter .lunbo .prev {
+  left: 0;
+  background: url(/assets/img/index/left01.png) no-repeat center center;
+}
+.warp .parter .lunbo .next {
+  right: 0;
+  background: url(/assets/img/index/right01.png) no-repeat center center;
 }

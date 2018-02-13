@@ -61,6 +61,7 @@
                         <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
                         <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
                         <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
+                        <a href="#" class="more-click">更多</a>
                     </ul>
                 </div>
                 <div class="title-content-right title-content-item clearfix">
@@ -76,8 +77,30 @@
                         <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
                         <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
                         <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
+                        <a href="#" class="more-click">更多</a>
                     </ul>
                 </div>
+            </div>
+        </div>
+
+        <div class="parter">
+            <div class="title">
+                <h4>合作资源</h4>
+                <p>Cooperative resources</p>
+            </div>
+            <div class="picScroll-left lunbo">
+                <div class="bd">
+                    <div class="tempWrap" style="overflow:hidden; position:relative; width:1152px"><div class="tempWrap" style="overflow:hidden; position:relative; width:1152px"><ul style="width: 1728px; left: -288px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                        <li style="float: left; width: 270px;"><a href="" target="_blank"><img src="assets/img/index/2_dianzixuehui.jpg" alt=""></a></li>
+                        <li style="float: left; width: 270px;"><a href="" target="_blank"><img src="assets/img/index/3_robocom.jpg" alt=""></a></li>
+                        <li style="float: left; width: 270px;"><a href="" target="_blank"><img src="assets/img/index/4_souhuoicon.png" alt=""></a></li>
+                        <li style="float: left; width: 270px;"><a href="" target="_blank"><img src="assets/img/index/2_dianzixuehui.jpg" alt=""></a></li>
+                        <li style="float: left; width: 270px;"><a href="" target="_blank"><img src="assets/img/index/3_robocom.jpg" alt=""></a></li>
+                        <li style="float: left; width: 270px;"><a href="" target="_blank"><img src="assets/img/index/4_souhuoicon.png" alt=""></a></li>
+                    </ul></div></div>
+                </div>
+                <a href="javascript:void(0)" class="prev"></a>
+                <a href="javascript:void(0)" class="next"></a>
             </div>
         </div>
     </div>

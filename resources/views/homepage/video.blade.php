@@ -3,7 +3,7 @@
 @section('content')
     <link rel="stylesheet" href="assets/css/video.css">
 
-    <div class="warp clearfix" style="min-height: 671px;">
+    <div class="warp clearfix">
         <div class="banner">
             <img src="assets/img/index/banner_2.jpg">
         </div>
