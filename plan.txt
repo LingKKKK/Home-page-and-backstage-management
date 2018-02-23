@@ -1,0 +1,13 @@
+√ 1 创建robocom数据库
+√ 2 docs表数据 里面包含pdf doc 文档
+        id name url type creat_at
+        文档编号 文档名称 下载路径 文件分类 文档类型 创建时间
+        文件分类:manual 手册   video 视频   documents 技术文件 train 线下培训
+        文件类型: doc video pdf
+
+3 在upload页面显示数据
+4 可以再upload页面对数据进行操作  增 删 改 查
+5 可以做到验证身份 身份 错误的情况下 跳转出本页面
+
+6 修改部分UI
+7 layout页面添加用户信息判断的功能

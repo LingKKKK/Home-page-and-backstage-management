@@ -34,3 +34,14 @@ Route::get('/video', function () {
 Route::get('/aboutus', function () {
     return view('homepage.aboutus');
 });
+
+// upload
+Route::get('/adminUpload', 'Home\upLoadController@upLoad');
+// 删除数据
+Route::get('/delete/{id}', 'Home\upLoadController@delete');
+
+
+// 关于我们
+Route::get('/demo', function () {
+    return view('homepage.demo');
+});
