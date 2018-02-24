@@ -134,47 +134,115 @@
             .append {
                 width: 100%;
                 display: none;
+                position: relative;
 
-                .filed {
-                    width: 100%;
-                    box-sizing: border-box;
-                    padding-left: 100px;
-                    height: 60px;
-                    font-size: 14px;
+                .leader-info-tips {
+                    position: absolute;
+                    left: 50%;
+                    top: 16px;
+                    transform: translateX(-50%);
 
                     span {
-                        letter-spacing: 2px;
-                        line-height: 60px;
-                        width: 105px;
-                        letter-spacing: 2px;
-                        line-height: 60px;
-                        width: 130px;
-                        display: block;
-                        float: left;
-                        text-align: right;
-                        margin-right: 35px;
+                        line-height: 20px;
+                        font-size: 15px;
+                        margin-right: 20px;
+                        color: #ff0000;
+                        font-weight: bold;
+                        // animation: change 1s  ease-in  infinite;
                     }
+                }
 
-                    input {
-                        width: 200px;
-                        height: 36px;
-                        line-height: 36px;
-                        margin-top: 12px;
+                form {
+                    width: 700px;
+                    margin: 0 auto;
+                    padding-top: 40px;
+
+                    .filed {
+                        width: 100%;
                         box-sizing: border-box;
-                        padding-left: 20px;
-                        outline: none;
+                        padding-left: 100px;
+                        height: 60px;
+                        font-size: 14px;
+
+                        #file {
+                            line-height: 20px;
+                            margin-top: 18px;
+                            padding: 0;
+                        }
+
+                        span {
+                            letter-spacing: 2px;
+                            line-height: 60px;
+                            width: 105px;
+                            letter-spacing: 2px;
+                            line-height: 60px;
+                            width: 130px;
+                            display: block;
+                            float: left;
+                            text-align: right;
+                            margin-right: 35px;
+                        }
+
+                        input {
+                            width: 200px;
+                            height: 36px;
+                            line-height: 36px;
+                            margin-top: 12px;
+                            box-sizing: border-box;
+                            padding-left: 20px;
+                            outline: none;
+                        }
+
+                        select {
+                            height: 35px;
+                            text-align: center;
+                            width: auto;
+                            padding: 0 2%;
+                            margin: 0;
+                            margin-top: 12px;
+                            font-size: 14px;
+
+                            option {
+                                padding: 10px 0px;
+                            }
+                        }
                     }
 
-                    select {
+                    .clear {
+                        width: 100px;
+                        display: block;
                         height: 35px;
                         text-align: center;
-                        width: auto;
-                        padding: 0 2%;
-                        margin: 0;
-                        margin-top: 12px;
+                        line-height: 35px;
+                        background: #0088ff;
+                        color: #fff;
+                        border-radius: 5px;
+                        float: left;
+                        margin: 40px 0px 20px 160px;
+                        outline: none;
+                        opacity: 0.7;
 
-                        option {
-                            padding: 10px 0px;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    .submit {
+                        width: 100px;
+                        display: block;
+                        height: 35px;
+                        text-align: center;
+                        line-height: 35px;
+                        background: #0088ff;
+                        color: #fff;
+                        border-radius: 5px;
+                        float: left;
+                        margin: 40px 0px 20px 50px;
+                        outline: none;
+                        opacity: 0.7;
+
+                        &:hover {
+                            opacity: 1;
                         }
                     }
                 }

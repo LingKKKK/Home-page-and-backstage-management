@@ -37,11 +37,11 @@ Route::get('/aboutus', function () {
 
 // upload
 Route::get('/adminUpload', 'Home\upLoadController@upLoad');
-// 删除数据
 Route::get('/delete/{id}', 'Home\upLoadController@delete');
+Route::post('/uploadDocs', 'Home\upLoadController@uploadDocs');
 
 
-// 关于我们
+// demo
 Route::get('/demo', function () {
     return view('homepage.demo');
 });
