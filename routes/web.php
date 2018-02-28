@@ -11,37 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.index');
-});
-// 赛事信息
-Route::get('/eventInformation', function () {
-    return view('homepage.eventInformation');
-});
-// 参赛报名
-Route::get('/match', function () {
-    return view('homepage.match');
-});
-// 资源下载
-Route::get('/doc', function () {
-    return view('homepage.doc');
-});
-// 视频资源
-Route::get('/video', function () {
-    return view('homepage.video');
-});
-// 关于我们
-Route::get('/aboutus', function () {
-    return view('homepage.aboutus');
-});
-
+Route::get('/', function () {return view('homepage.index');});
+Route::get('/eventInformation', function () {return view('homepage.eventInformation');});
+Route::get('/match', function () {return view('homepage.match');});
+Route::get('/doc', function () {return view('homepage.doc');});
+Route::get('/video', function () {return view('homepage.video');});
+Route::get('/aboutus', function () {return view('homepage.aboutus');});
 // upload
 Route::get('/adminUpload', 'Home\upLoadController@upLoad');
 Route::get('/delete/{id}', 'Home\upLoadController@delete');
 Route::post('/uploadDocs', 'Home\upLoadController@uploadDocs');
+// 后台管理
+Route::get('/cms', 'Cms\CmsController@base');
+Route::get('/index', 'Cms\CmsController@index');
+Route::get('/documentManage', 'Cms\CmsController@documentManage');
+Route::get('/documentUpload', 'Cms\CmsController@documentUpload');
+Route::get('/newsManage', 'Cms\CmsController@newsManage');
+Route::get('/newsUpload', 'Cms\CmsController@newsUpload');
+Route::get('/setting', 'Cms\CmsController@setting');
 
+// login|register
+Route::get('/login', 'Auth\AuthController@login');
+Route::post('/doLogin', 'Auth\AuthController@doLogin');
+Route::get('/register', 'Auth\AuthController@register');
+Route::post('/doRegister', 'Auth\AuthController@doRegister');
 
-// demo
-Route::get('/demo', function () {
-    return view('homepage.demo');
-});
+Route::post('/uploadNews', 'Cms\CmsController@uploadNews');
+Route::get('/deleteNews/{id}', 'Cms\CmsController@delete');
+Route::get('/news/{id}', 'Cms\CmsController@showNews');
+

@@ -1,0 +1,44 @@
+.panel {
+    .panel-body {
+        .adv-table {
+            .row-fluid {
+                .span6 {
+                    label {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            table {
+                thead {
+                    tr {
+                        .sorting_disabled {
+                            display: none;
+                        }
+
+                        th {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        .center_t {
+                            display: none;
+                        }
+
+                        td {
+                            text-align: center;
+
+                            a {
+                                text-align: center;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

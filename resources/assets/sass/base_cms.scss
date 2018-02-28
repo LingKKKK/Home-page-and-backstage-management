@@ -1,0 +1,21 @@
+.left-side {
+    .left-side-inner {
+        .custom-nav {
+            li {
+                cursor: pointer;
+            }
+
+            .sub-menu-list {
+                li {
+                    a {
+                        padding-left: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#cms_content {
+
+}

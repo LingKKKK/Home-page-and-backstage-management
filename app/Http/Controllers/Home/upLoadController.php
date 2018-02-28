@@ -58,8 +58,36 @@ class upLoadController extends Controller
             // values(?,?,?,?)",[5,'小明','出行',670]);
             DB::insert('insert into docs (id, name, url, downloads, classify, type, creat_at) values (?, ?, ?, ?, ?, ?, ?)', [$f_id, $f_name, '/public/upload/'.$f_name, 1, $f_classify, $f_type, $creat_at]);
 
-            dd('上传成功');
+            return redirect()->back();
+        }
+    }
+
+    public function uploadNews(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            [
+                'title'   => 'required',
+                'label' => 'required',
+                'content' => 'required',
+            ],
+            [
+                'title.required'  => '新闻标题不能为空',
+                'label.required' => '新闻标签不能为空',
+                'content.required' => '新闻内容不能为空',
+            ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors())->withInput();
         }
 
+        $cms_id = DB::table('cms_news')->max('id') + 1;
+        $cms_title = $request->input('title', '');
+        $cms_label = $request->input('label', '');
+        $cms_content = $request->input('content', '');
+        $creat_at = substr(date('Y-m-d H:i:s', time()), 0, 16);
+
+        DB::insert('insert into cms_news (id, title, lebel, content, url, rule, creat_at, times) values (?, ?, ?, ?, ?, ?, ?, ?)', [$cms_id, $cms_title, $cms_label, $cms_content, '/public/upload/'.$cms_id, '管理员', $creat_at, 1]);
+
+        return redirect()->back();
     }
 }

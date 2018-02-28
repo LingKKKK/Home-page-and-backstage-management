@@ -1,0 +1,126 @@
+.warp {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+.warp .banner {
+  width: 100%;
+  height: 500px;
+  display: block;
+  position: relative;
+  margin-bottom: 90px;
+}
+.warp .banner .img {
+  width: 100%;
+  height: 500px;
+  display: block;
+  overflow: hidden;
+}
+.warp .banner .img li {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.warp .banner .img li img {
+  width: 1450px;
+  height: 500px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+.warp .banner .img .active {
+  display: block;
+}
+.warp .banner .nav-img {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+.warp .banner .nav-img li {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+  background: #fff;
+  border-radius: 50%;
+  float: left;
+  cursor: pointer;
+}
+.warp .banner .nav-img .active {
+  background: #0195eb;
+}
+.warp .cut {
+  width: 100%;
+  height: 0px;
+  border: 1px solid #ccc;
+}
+.warp .inner {
+  width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 50px 50px;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+}
+.warp .inner .error {
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  color: #f90303;
+  letter-spacing: 2px;
+  display: none;
+}
+.warp .inner h1 {
+  text-align: center;
+  line-height: 100px;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #323232;
+}
+.warp .inner .label {
+  padding: 5px 12px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 40px;
+  float: left;
+  display: inline;
+  letter-spacing: 1px;
+  background-color: #18376b;
+  margin-left: 100px;
+}
+.warp .inner .content {
+  display: block;
+}
+.warp .inner .creat_at {
+  color: #999;
+  font-size: 14px;
+  float: left;
+  letter-spacing: 1px;
+  line-height: 20px;
+  padding-left: 20px;
+  line-height: 28px;
+  margin-left: 20px;
+}
+.warp .inner .rule {
+  color: #999;
+  font-size: 14px;
+  float: left;
+  letter-spacing: 1px;
+  line-height: 20px;
+  padding-left: 20px;
+  line-height: 28px;
+  margin-left: 20px;
+}
+.warp .inner .times {
+  color: #999;
+  font-size: 14px;
+  float: left;
+  letter-spacing: 1px;
+  line-height: 20px;
+  padding-left: 20px;
+  line-height: 28px;
+  margin-left: 20px;
+}

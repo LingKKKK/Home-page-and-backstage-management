@@ -10,15 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
-    <script src="../assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
+    <script src="/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/layout.css">
 </head>
 <body>
     <div class="top">
         <div class="inner">
             <div class="logo">
-                <img src="assets/img/common/logo.png">
+                <img src="/assets/img/common/logo.png">
             </div>
             <ul class="nav">
                 <li class="active">
@@ -83,7 +83,7 @@
                 <span>CopyRight@北京搜获科技有限公司</span>
             </div>
             <div class="code">
-                <img src="assets/img/common/qrcode.png">
+                <img src="/assets/img/common/qrcode.png">
             </div>
         </div>
     </div>

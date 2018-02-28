@@ -1,0 +1,6 @@
+.left-side .left-side-inner .custom-nav li {
+  cursor: pointer;
+}
+.left-side .left-side-inner .custom-nav .sub-menu-list li a {
+  padding-left: 60px;
+}
