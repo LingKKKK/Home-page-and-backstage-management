@@ -58,7 +58,6 @@ class upLoadController extends Controller
             // DB::table('docs')->where('id', $id)->update(['downloads' => $results->downloads + 1]);
             // $bool=DB::insert("insert into docs(id, name, url, downloads, classify, type, creat_at)
             // values(?,?,?,?)",[5,'小明','出行',670]);
-            dd(1);
             DB::insert('insert into docs (id, name, url, downloads, classify, type, creat_at) values (?, ?, ?, ?, ?, ?, ?)', [$f_id, $f_name, '/public/docs/'.$f_name, 1, $f_classify, $f_type, $creat_at]);
 
             // return redirect()->back();
