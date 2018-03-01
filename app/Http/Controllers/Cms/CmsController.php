@@ -147,4 +147,9 @@ class CmsController extends Controller
             return redirect('/cms#pictureManage');
         }
     }
+
+    public function pictureDelete($id)
+    {
+        DB::table('cms_picture')->where('id', '=', $id)->delete();
+    }
 }

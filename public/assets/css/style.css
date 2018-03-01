@@ -2353,18 +2353,29 @@ table.display tr.even.gradeX, table.display tr.gradeX, tr.even.gradeU td.sorting
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  position: relative;
+}
+.media-gal .item .delete {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: red;
+  font-size: 25px;
 }
 
 .media-gal .item:hover {
-  background: #65CEA7;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
 }
+.media-gal .item:hover .delete {
+  display: block;
+}
 
 .media-gal .item:hover img {
-  opacity: .3;
+  opacity: .5;
 }
 
 .media-gal .item p {

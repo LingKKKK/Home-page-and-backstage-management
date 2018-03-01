@@ -21,6 +21,7 @@
                             <img src= '{{ $result->url or '' }}' />
                         </a>
                         <p>{{ $result->name or '' }}</p>
+                        <div class="delete" id="{{ $result->id or '' }}" style="cursor: pointer;">x</div>
                     </div>
                 @endforeach
             @else
@@ -123,5 +124,15 @@
             $container.isotope({filter: selector});
             return false;
         });
+
+        $('.delete').each(function(index,el){
+            $(this).click(function(){
+                var id = $(this).attr('id');
+                $.get("/deletepicture/" + id, function(data, status) {
+                    // window.location.reload();
+                    $('#pictureManage').click();
+                });
+            })
+        })
     });
 </script>
