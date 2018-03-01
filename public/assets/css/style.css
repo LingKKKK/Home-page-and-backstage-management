@@ -2319,11 +2319,13 @@ table.display tr.even.gradeX, table.display tr.gradeX, tr.even.gradeU td.sorting
   background: #65CEA7;
   border-color: #65CEA7;
   color: #fff;
-  padding: 5px 10px;
   border-radius: 2px;
   -webkit-border-radius: 2px;
   text-decoration: none;
   font-size: 12px;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+  margin-right: 5px;
 }
 
 .media-filter li a:hover, .media-filter li a:focus {

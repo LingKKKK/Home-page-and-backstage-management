@@ -37,6 +37,14 @@ $(function() {
                 pathn = "setting";
                 i = 5;
                 break;
+            case "#pictureManage":
+                pathn = "pictureManage";
+                i = 6;
+                break;
+            case "#pictureUpload":
+                pathn = "pictureUpload";
+                i = 7;
+                break;
             default:
                 pathn = "index";
                 i = 0;

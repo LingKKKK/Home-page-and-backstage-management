@@ -12,6 +12,12 @@ class CmsController extends Controller
 {
     public function base()
     {
+        // if (! Auth::check()) {
+        //     return redirect('/login');
+        // }
+
+        // $teamList = $service->getTeamList(Auth::user()->id);
+        // return view('cmspage.base', compact('teamList'));
         return view('cmspage.base');
     }
 
@@ -89,5 +95,56 @@ class CmsController extends Controller
         $results = DB::table('cms_news')->where('id', '=', $id)->get();
 
         return view('homepage.news', ['results' => $results]);
+    }
+
+    public function pictureManage()
+    {
+        $results = DB::table('cms_picture')->orderBy('id', 'asc')->get();
+
+        return view('cmspage.pictureManage', ['results' => $results]);
+        // return view('cmspage.pictureManage');
+    }
+
+    public function pictureUpload()
+    {
+        return view('cmspage.pictureUpload');
+    }
+
+    public function uploadpicture(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            [
+                'file'   => 'required',
+                'name' => 'required',
+            ],
+            [
+                'file.required'  => '文件不能为空',
+                'name.required' => '文件名称不能为空',
+            ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
+
+        $f_id = DB::table('cms_picture')->max('id') + 1;
+        // $f_name = $request->input('name', '').'.pdf';
+        $f_name = $request->input('name', '');
+        $f_classify = $request->input('classify', '');
+        $f_type = $request->input('type', '');
+        $f_file = $request->input('file', '');
+        $file = $request->file();
+
+        // dd($f_id, $f_name, $f_classify, $f_type);
+
+        if ($request->file('file')->isValid()) {
+            $creat_at = substr(date('Y-m-d H:i:s', time()), 0, 16);
+
+
+            $request->file('file')->move(storage_path('pics/'), $f_name.'.'.$f_type);
+            DB::insert('insert into cms_picture (id, name, url, classify, creat_at) values (?, ?, ?, ?, ?)', [$f_id, $f_name, '/pics/'.$f_name.'.'.$f_type, $f_classify, $creat_at]);
+
+            // return redirect()->back();
+            return redirect('/cms#pictureManage');
+        }
     }
 }
