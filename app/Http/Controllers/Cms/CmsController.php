@@ -76,7 +76,7 @@ class CmsController extends Controller
         DB::insert('insert into cms_news (id, title, lebel, content, url, rule, creat_at, times) values (?, ?, ?, ?, ?, ?, ?, ?)', [$cms_id, $cms_title, $cms_label, $cms_content, '/news/'.$cms_id, '管理员', $creat_at, 1]);
 
         // return redirect('/cms#documentManage')->back();
-        return redirect('/cms#documentManage');
+        return redirect('/cms#newsManage');
     }
 
     public function delete($id)
