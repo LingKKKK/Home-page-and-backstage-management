@@ -31,16 +31,16 @@
         <div class="left-side-inner">
             <div class="visible-xs hidden-sm hidden-md hidden-lg"">
                 <div class="media logged-user">
-                    <!-- <img alt="" src="assets/img/photos/user-avatar.png" class="media-object">
-                    <div class="media-body">
+                    <img alt="" src="assets/img/logo-b.png" class="media-object" style="text-align: center; display: block; width: 50px;">
+                    <!-- <div class="media-body">
                         <h4><a href="#">管理员</a></h4>
                         <span>"正在为您载入..."</span>
                     </div> -->
                 </div>
-                <h5 class="left-nav-title">Account Information</h5>
-                <ul class="nav nav-pills nav-stacked custom-nav">
-                  <!-- <li><a href="#"><i class="fa fa-user"></i> <span>个人中心</span></a></li>
-                  <li><a href="#"><i class="fa fa-cog"></i> <span>设置</span></a></li> -->
+                <h5 class="left-nav-title">管理操作</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav" style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                  <li><a href="#"><i class="fa fa-user"></i> <span>个人中心</span></a></li>
+                  <li><a href="#"><i class="fa fa-cog"></i> <span>设置</span></a></li>
                   <li><a href="#"><i class="fa fa-sign-out"></i> <span>退出</span></a></li>
                 </ul>
             </div>
@@ -70,20 +70,20 @@
             <a class="toggle-btn" style="display: block;"><i class="fa fa-bars"></i></a>
             <!-- 切换侧边栏的状态 -->
             <!-- 搜索栏!!!! -->
-            <form class="searchform" action="" method="post">
+            <!-- <form class="searchform" action="" method="post">
                 <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
-            </form>
+            </form> -->
             <div class="menu-right">
                 <ul class="notification-menu">
                     <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img src="assets/img/photos/user-avatar.png" alt="" />
-                            Admin
+                            <img src="assets/img/logo-b.png" alt="" />
+                            管理员
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                            <!-- <li><a href="#"><i class="fa fa-user"></i> 个人中心</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i> 设置</a></li> -->
+                            <li><a href="#"><i class="fa fa-user"></i> 个人中心</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
                             <li><a href="#"><i class="fa fa-sign-out"></i> 退出</a></li>
                         </ul>
                     </li>
@@ -91,18 +91,10 @@
                 </ul>
             </div>
         </div>
-        <div class="page-heading">
-        </div>
-        <div class="wrapper" id="cms_content">
-
-        </div>
-        <footer style="position: fixed; left: 240px; bottom: 0px;width: calc(100% - 240px);">
-            <span style="text-align: center; display: block;">底部信息底部信息底部信息</span>
-        </footer>
-
+        <div class="page-heading"></div>
+        <div class="wrapper" id="cms_content"></div>
     </div>
 </section>
-
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="/assets/js/jquery-1.10.2.min.js"></script>
 <script src="/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
@@ -110,9 +102,14 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/modernizr.min.js"></script>
 <script src="/assets/js/jquery.nicescroll.js"></script>
-
 <!--common scripts for all pages-->
 <script src="/assets/js/scripts.js"></script>
 <script src="/assets/js/scripts_cms.js"></script>
+<script type="text/javascript">
+    // console.log(calc(100% - 240px));
+    $('.left-side.sticky-left-side').resize(function(){
+        console.log($('footer').css('width'));
+    });
+</script>
 </body>
 </html>

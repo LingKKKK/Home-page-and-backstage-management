@@ -1,3 +1,4 @@
+<link href="/assets/css/cms_setting.css" rel="stylesheet">
 <div>
-    setting
+    <span class="tips">Setting页面信息</span>
 </div>

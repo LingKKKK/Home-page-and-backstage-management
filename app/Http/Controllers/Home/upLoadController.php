@@ -58,7 +58,8 @@ class upLoadController extends Controller
             // values(?,?,?,?)",[5,'小明','出行',670]);
             DB::insert('insert into docs (id, name, url, downloads, classify, type, creat_at) values (?, ?, ?, ?, ?, ?, ?)', [$f_id, $f_name, '/public/upload/'.$f_name, 1, $f_classify, $f_type, $creat_at]);
 
-            return redirect()->back();
+            // return redirect()->back();
+            return redirect('/cms#documentManage');
         }
     }
 
@@ -88,6 +89,7 @@ class upLoadController extends Controller
 
         DB::insert('insert into cms_news (id, title, lebel, content, url, rule, creat_at, times) values (?, ?, ?, ?, ?, ?, ?, ?)', [$cms_id, $cms_title, $cms_label, $cms_content, '/public/upload/'.$cms_id, '管理员', $creat_at, 1]);
 
-        return redirect()->back();
+        // return redirect()->back();
+        return redirect('/cms#newsManage');
     }
 }

@@ -425,8 +425,10 @@ hr {
 }
 
 h5.left-nav-title {
-    margin-left: 10px;
+    // margin-left: 10px;
     color: #fff;
+    padding-left: 20px;
+    line-height: 30px;
 }
 
 .left-side-collapsed .custom-nav {
@@ -901,7 +903,8 @@ h5.left-nav-title {
 .main-content {
     margin-left: 240px;
     background: #eff0f4;
-    min-height: 1000px;
+    // min-height: 1000px;
+    min-height: calc(100vh - 0px);
 }
 
 .page-heading {
