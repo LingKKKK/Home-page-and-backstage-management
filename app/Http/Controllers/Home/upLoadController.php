@@ -52,11 +52,14 @@ class upLoadController extends Controller
 
         if ($request->file('file')->isValid()) {
             $creat_at = substr(date('Y-m-d H:i:s', time()), 0, 16);
-            $request->file('file')->move('upload/', $f_name);
+
+
+            $request->file('file')->move(storage_path('docs/'), $f_name);
             // DB::table('docs')->where('id', $id)->update(['downloads' => $results->downloads + 1]);
             // $bool=DB::insert("insert into docs(id, name, url, downloads, classify, type, creat_at)
             // values(?,?,?,?)",[5,'小明','出行',670]);
-            DB::insert('insert into docs (id, name, url, downloads, classify, type, creat_at) values (?, ?, ?, ?, ?, ?, ?)', [$f_id, $f_name, '/public/upload/'.$f_name, 1, $f_classify, $f_type, $creat_at]);
+            dd(1);
+            DB::insert('insert into docs (id, name, url, downloads, classify, type, creat_at) values (?, ?, ?, ?, ?, ?, ?)', [$f_id, $f_name, '/public/docs/'.$f_name, 1, $f_classify, $f_type, $creat_at]);
 
             // return redirect()->back();
             return redirect('/cms#documentManage');
