@@ -84,6 +84,9 @@
   right: 27px;
   top: -37px;
 }
+.top .inner .user-dialog .noLogin {
+  display: none;
+}
 .top .inner .user-dialog .noLogin a {
   color: #0088ff;
   display: block;
@@ -94,6 +97,27 @@
   float: left;
 }
 .top .inner .user-dialog .noLogin i {
+  color: #0088ff;
+  display: block;
+  line-height: 37px;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+  font-size: 14px;
+  float: left;
+}
+.top .inner .user-dialog .login {
+  display: block;
+}
+.top .inner .user-dialog .login a {
+  color: #0088ff;
+  display: block;
+  line-height: 37px;
+  letter-spacing: 1px;
+  transition: color 0.5s;
+  font-size: 14px;
+  float: left;
+}
+.top .inner .user-dialog .login i {
   color: #0088ff;
   display: block;
   line-height: 37px;

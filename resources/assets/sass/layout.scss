@@ -96,6 +96,32 @@
             top: -37px;
 
             .noLogin {
+                display: none;
+
+                a {
+                    color: #0088ff;
+                    display: block;
+                    line-height: 37px;
+                    letter-spacing: 1px;
+                    transition: color 0.5s;
+                    font-size: 14px;
+                    float: left;
+                }
+
+                i {
+                    color: #0088ff;
+                    display: block;
+                    line-height: 37px;
+                    letter-spacing: 1px;
+                    transition: color 0.5s;
+                    font-size: 14px;
+                    float: left;
+                }
+            }
+
+            .login {
+                display: block;
+
                 a {
                     color: #0088ff;
                     display: block;

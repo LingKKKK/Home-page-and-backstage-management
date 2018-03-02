@@ -60,7 +60,11 @@
                 <div class="noLogin">
                     <a id="register" href="#">注册</a><i>  /  </i><a id="login" href="#">登录</a>
                 </div>
-                <div class="login"></div>
+                <div class="login">
+                    <a id="userInfo">
+                        <i>您好, 用户名</i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

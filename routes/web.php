@@ -37,6 +37,8 @@ Route::get('/newsManage', 'Cms\CmsController@newsManage');
 Route::get('/newsUpload', 'Cms\CmsController@newsUpload');
 Route::get('/pictureManage', 'Cms\CmsController@pictureManage');
 Route::get('/pictureUpload', 'Cms\CmsController@pictureUpload');
+Route::get('/videoManage', 'Cms\CmsController@videoManage');
+Route::get('/videoUpload', 'Cms\CmsController@videoUpload');
 Route::get('/setting', 'Cms\CmsController@setting');
 
 // 文档: 上传 删除

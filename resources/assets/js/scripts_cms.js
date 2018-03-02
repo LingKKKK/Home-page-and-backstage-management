@@ -45,6 +45,14 @@ $(function() {
                 pathn = "pictureUpload";
                 i = 7;
                 break;
+            case "#videoManage":
+                pathn = "videoManage";
+                i = 8;
+                break;
+            case "#videoUpload":
+                pathn = "videoUpload";
+                i = 9;
+                break;
             default:
                 pathn = "index";
                 i = 0;

@@ -53,10 +53,13 @@
             }
 
             setTimeout(function(){
-                if (!$('.id')) {
-                    $('.error').show();
+                console.log($('.id').length);
+                if ($('.id').length == 0) {
+                    $('.error').css('display', 'block');
+                    console.log(1)
                 } else {
-                    $('.error').hide();
+                    $('.error').css('display', 'none');
+                    console.log(2)
                 }
             }, 1000)
         })

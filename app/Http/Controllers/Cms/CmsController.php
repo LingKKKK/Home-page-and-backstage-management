@@ -152,4 +152,15 @@ class CmsController extends Controller
     {
         DB::table('cms_picture')->where('id', '=', $id)->delete();
     }
+
+    public function videoManage()
+    {
+        // $results = DB::table('cms_video')->orderBy('id', 'asc')->get();
+        return view('cmspage.videoManage');
+    }
+
+    public function videoUpload()
+    {
+        return view('cmspage.videoUpload');
+    }
 }
