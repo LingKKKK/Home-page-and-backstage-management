@@ -59,7 +59,7 @@
                         <li class="item_click" data-id="newsUpload" id="newsUpload"><a> 新闻发布</a></li>
                     </ul>
                 </li>
-                <li class="menu-list"><a><i class="fa fa-picture-o"></i> <span> 图片</span></a>
+                <li class="menu-list"><a><i class="fa fa-picture-o"></i> <span> 精彩回顾</span></a>
                     <ul class="sub-menu-list">
                         <li class="item_click" data-id="pictureManage" id="pictureManage"><a> 图片管理</a></li>
                         <li class="item_click" data-id="pictureUpload" id="pictureUpload"><a> 图片上传</a></li>
@@ -69,6 +69,12 @@
                     <ul class="sub-menu-list">
                         <li class="item_click" data-id="videoManage" id="videoManage"><a> 视频管理</a></li>
                         <li class="item_click" data-id="videoUpload" id="videoUpload"><a> 视频上传</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a><i class="fa fa-picture-o"></i> <span> 主页banner图</span></a>
+                    <ul class="sub-menu-list">
+                        <li class="item_click" data-id="bannerManage" id="bannerManage"><a> 图片管理</a></li>
+                        <li class="item_click" data-id="bannerUpload" id="bannerUpload"><a> 图片上传</a></li>
                     </ul>
                 </li>
                 <li class="item_click" data-id="setting"  id="setting"><a><i class="fa fa-cogs"></i> <span> 设置</span></a></li>

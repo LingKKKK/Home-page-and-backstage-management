@@ -5,7 +5,27 @@
 
     <div class="warp" style="min-height: 671px;">
         <div class="banner">
-            <img src="assets/img/index/banner_2.jpg">
+            <ul class="img">
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'eventInformation')
+                            <li>
+                                <img src="{{ $result->url or '' }}">
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
+
+            <ul class="nav-img">
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'index')
+                            <li></li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
         </div>
         <div class="info clearfix">
             <div class="left">
@@ -107,6 +127,18 @@
 
     <script>
         $(function(){
+
+            $('.img >li').eq(0).addClass('active');
+            $('.nav-img >li').eq(0).addClass('active');
+            $('.nav-img >li').each(function(index,el) {
+                $(this).click(function(){
+                    $('.nav-img >li').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.img >li').removeClass('active');
+                    $('.img li').eq(index).addClass('active');
+                })
+            })
             // console.log(window.location.hash)
 
             if (window.location.hash == '#trends') {

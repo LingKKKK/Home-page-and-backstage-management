@@ -3,17 +3,50 @@
   margin: 0 auto;
 }
 .warp .banner {
-  width: 1280px;
+  width: 100%;
   height: 500px;
   display: block;
-  margin: 0 auto;
-  overflow: hidden;
-  margin-bottom: 40px;
+  position: relative;
+  margin-bottom: 90px;
 }
-.warp .banner img {
+.warp .banner .img {
+  width: 100%;
   height: 500px;
   display: block;
+  overflow: hidden;
+}
+.warp .banner .img li {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.warp .banner .img li img {
+  width: 1450px;
+  height: 500px;
   margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+.warp .banner .img .active {
+  display: block;
+}
+.warp .banner .nav-img {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+.warp .banner .nav-img li {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+  background: #fff;
+  border-radius: 50%;
+  float: left;
+  cursor: pointer;
+}
+.warp .banner .nav-img .active {
+  background: #0195eb;
 }
 .warp .info {
   padding: 0px 0px 100px 0px;

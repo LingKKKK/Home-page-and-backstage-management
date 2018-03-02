@@ -5,7 +5,26 @@
 
     <div class="warp clearfix">
         <div class="banner">
-            <img src="assets/img/index/banner_2.jpg">
+            <ul class="img">
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'match')
+                            <li>
+                                <img src="{{ $result->url or '' }}">
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
+            <ul class="nav-img">
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'index')
+                            <li></li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
         </div>
         <div class="video-box">
             <div class="obox">
@@ -21,6 +40,18 @@
 
     <script>
         $(function(){
+
+            $('.img >li').eq(0).addClass('active');
+            $('.nav-img >li').eq(0).addClass('active');
+            $('.nav-img >li').each(function(index,el) {
+                $(this).click(function(){
+                    $('.nav-img >li').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.img >li').removeClass('active');
+                    $('.img li').eq(index).addClass('active');
+                })
+            })
             $('.table >li').each(function(index,el) {
                 $(this).click(function(){
                     $('.table >li').removeClass('on');

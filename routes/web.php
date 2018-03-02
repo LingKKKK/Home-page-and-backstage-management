@@ -12,12 +12,18 @@
 */
 
 // 主页等部分页面显示:
-Route::get('/', function () {return view('homepage.index');});
-Route::get('/eventInformation', function () {return view('homepage.eventInformation');});
-Route::get('/match', function () {return view('homepage.match');});
-Route::get('/doc', function () {return view('homepage.doc');});
-Route::get('/video', function () {return view('homepage.video');});
-Route::get('/aboutus', function () {return view('homepage.aboutus');});
+// Route::get('/', function () {return view('homepage.index');});
+// Route::get('/eventInformation', function () {return view('homepage.eventInformation');});
+// Route::get('/match', function () {return view('homepage.match');});
+// Route::get('/doc', function () {return view('homepage.doc');});
+// Route::get('/video', function () {return view('homepage.video');});
+// Route::get('/aboutus', function () {return view('homepage.aboutus');});
+Route::get('/', 'Home\IndexController@index');
+Route::get('/eventInformation', 'Home\IndexController@eventInformation');
+Route::get('/match', 'Home\IndexController@match');
+Route::get('/doc', 'Home\IndexController@doc');
+Route::get('/video', 'Home\IndexController@video');
+Route::get('/aboutus', 'Home\IndexController@aboutus');
 
 
 
@@ -35,10 +41,12 @@ Route::get('/documentManage', 'Cms\CmsController@documentManage');
 Route::get('/documentUpload', 'Cms\CmsController@documentUpload');
 Route::get('/newsManage', 'Cms\CmsController@newsManage');
 Route::get('/newsUpload', 'Cms\CmsController@newsUpload');
-Route::get('/pictureManage', 'Cms\CmsController@pictureManage');
-Route::get('/pictureUpload', 'Cms\CmsController@pictureUpload');
+Route::get('/bannerManage', 'Cms\CmsController@bannerManage');
+Route::get('/bannerUpload', 'Cms\CmsController@pictureUpload');
 Route::get('/videoManage', 'Cms\CmsController@videoManage');
 Route::get('/videoUpload', 'Cms\CmsController@videoUpload');
+Route::get('/bannerManage', 'Cms\CmsController@bannerManage');
+Route::get('/bannerUpload', 'Cms\CmsController@bannerUpload');
 Route::get('/setting', 'Cms\CmsController@setting');
 
 // 文档: 上传 删除
@@ -51,7 +59,17 @@ Route::post('/uploadNews', 'Cms\CmsController@uploadNews');
 Route::get('/deleteNews/{id}', 'Cms\CmsController@delete');
 Route::get('/news/{id}', 'Cms\CmsController@showNews');
 
+// 视频链接: 上传 删除
+Route::post('/uploadvideo', 'Cms\CmsController@uploadvideo');
+Route::get('/deletevideo/{id}', 'Cms\CmsController@delete');
+Route::get('/video/{id}', 'Cms\CmsController@showvideo');
+
 // 图片: 上传 删除
 Route::post('/uploadpicture', 'Cms\CmsController@uploadpicture');
 Route::get('/deletepicture/{id}', 'Cms\CmsController@pictureDelete');
 // Route::get('/picture/{id}', 'Cms\CmsController@showpicture');
+
+
+// banner: 上传 删除
+Route::post('/uploadbanner', 'Cms\CmsController@uploadbanner');
+Route::get('/deletebanner/{id}', 'Cms\CmsController@bannerDelete');

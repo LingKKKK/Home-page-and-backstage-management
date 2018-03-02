@@ -56,10 +56,8 @@
                 console.log($('.id').length);
                 if ($('.id').length == 0) {
                     $('.error').css('display', 'block');
-                    console.log(1)
                 } else {
                     $('.error').css('display', 'none');
-                    console.log(2)
                 }
             }, 1000)
         })

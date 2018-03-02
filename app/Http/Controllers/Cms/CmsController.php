@@ -155,12 +155,86 @@ class CmsController extends Controller
 
     public function videoManage()
     {
-        // $results = DB::table('cms_video')->orderBy('id', 'asc')->get();
-        return view('cmspage.videoManage');
+        $results = DB::table('cms_video')->orderBy('id', 'asc')->get();
+        return view('cmspage.videoManage', ['results' => $results]);
     }
 
     public function videoUpload()
     {
         return view('cmspage.videoUpload');
+    }
+
+    public function bannerManage()
+    {
+        $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
+
+        return view('cmspage.bannerManage', ['results' => $results]);
+        // return view('cmspage.bannerManage');
+    }
+
+    public function bannerUpload()
+    {
+        return view('cmspage.bannerUpload');
+    }
+
+    public function uploadbanner(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            [
+                'file'   => 'required',
+                'name' => 'required',
+            ],
+            [
+                'file.required'  => '文件不能为空',
+                'name.required' => '文件名称不能为空',
+            ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
+
+        $f_id = DB::table('cms_banner')->max('id') + 1;
+        // $f_name = $request->input('name', '').'.pdf';
+        $f_name = $request->input('name', '');
+        $f_classify = $request->input('classify', '');
+        $f_type = $request->input('type', '');
+        $f_file = $request->input('file', '');
+        $file = $request->file();
+
+        // dd($f_id, $f_name, $f_classify, $f_type);
+
+        if ($request->file('file')->isValid()) {
+            $creat_at = substr(date('Y-m-d H:i:s', time()), 0, 16);
+
+
+            $request->file('file')->move(storage_path('pics/'), $f_name.'.'.$f_type);
+            DB::insert('insert into cms_banner (id, name, url, classify, creat_at) values (?, ?, ?, ?, ?)', [$f_id, $f_name, '/pics/'.$f_name.'.'.$f_type, $f_classify, $creat_at]);
+
+            // return redirect()->back();
+            return redirect('/cms#bannerManage');
+        }
+    }
+
+    public function uploadvideo(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+            [
+                'url'   => 'required',
+                'name' => 'required',
+            ],
+            [
+                'url.required'  => '路径不能为空',
+                'name.required' => '文件名称不能为空',
+            ]);
+
+        $f_id = DB::table('cms_video')->max('id') + 1;
+        // $f_name = $request->input('name', '').'.pdf';
+        $f_name = $request->input('name', '');
+        $f_classify = $request->input('classify', '');
+
+        DB::insert('insert into cms_video (id, name, url, classify, creat_at) values (?, ?, ?, ?, ?)', [$f_id, $f_name, $f_url, $f_classify, $creat_at]);
+
+        // return redirect()->back();
+        return redirect('/cms#videoManage');
     }
 }

@@ -53,6 +53,14 @@ $(function() {
                 pathn = "videoUpload";
                 i = 9;
                 break;
+            case "#bannerManage":
+                pathn = "bannerManage";
+                i = 10;
+                break;
+            case "#bannerUpload":
+                pathn = "bannerUpload";
+                i = 11;
+                break;
             default:
                 pathn = "index";
                 i = 0;

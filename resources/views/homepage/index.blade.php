@@ -6,16 +6,24 @@
     <div class="warp" style="min-height: 671px;">
         <div class="banner">
             <ul class="img">
-                <li class="active">
-                    <img src="assets/img/index/banner_1.jpg">
-                </li>
-                <li>
-                    <img src="assets/img/index/banner_2.jpg">
-                </li>
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'index')
+                            <li>
+                                <img src="{{ $result->url or '' }}">
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
             <ul class="nav-img">
-                <li class="active"></li>
-                <li></li>
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'index')
+                            <li></li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
         </div>
         <div class="inner clearfix">
@@ -36,13 +44,11 @@
                         <a class="sp3">MORE></a>
                     </div>
                     <ul>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a><i>2018-02-08</i></li>
+                    @if($newsList)
+                        @foreach($newsList as $key => $result)
+                                <li><a href="{{ $result->url or '' }}">{{ $result->title or '' }}</a><i>{{ $result->creat_at or '' }}</i></li>
+                        @endforeach
+                    @endif
                     </ul>
                 </div>
             </div>
@@ -54,14 +60,12 @@
                         <span class="sp2">Dynamic Events</span>
                     </div>
                     <ul>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <a href="#" class="more-click">更多</a>
+                        @if($docsList)
+                            @foreach($docsList as $key => $result)
+                                    <li><a href="{{ $result->url or '' }}">{{ $result->name or '' }}</a></li>
+                            @endforeach
+                        @endif
+                        <a href="/doc" class="more-click">更多</a>
                     </ul>
                 </div>
                 <div class="title-content-right title-content-item clearfix">
@@ -70,14 +74,12 @@
                         <span class="sp2">Dynamic Events</span>
                     </div>
                     <ul>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <li><a href="#">关于2017年世界机器人大赛补充通知</a></li>
-                        <a href="#" class="more-click">更多</a>
+                        @if($videoList)
+                            @foreach($videoList as $key => $result)
+                                    <li><a href="{{ $result->url or '' }}">{{ $result->name or '' }}</a></li>
+                            @endforeach
+                        @endif
+                        <a href="/video" class="more-click">更多</a>
                     </ul>
                 </div>
             </div>
@@ -107,6 +109,8 @@
 
     <script>
         $(function(){
+            $('.img >li').eq(0).addClass('active');
+            $('.nav-img >li').eq(0).addClass('active');
             $('.nav-img >li').each(function(index,el) {
                 $(this).click(function(){
                     $('.nav-img >li').removeClass('active');
