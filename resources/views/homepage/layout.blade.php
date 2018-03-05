@@ -25,23 +25,23 @@
                     <a href="/">首页</a>
                 </li>
                 <li>
-                    <a href="/eventInformation#trends">赛事信息</a>
+                    <a href="/competition">关于竞赛</a>
                     <ul class="two-level" style="z-index: 999;">
-                        <li><a href="/eventInformation#trends">赛事动态</a></li>
-                        <li><a href="/eventInformation#intro">赛事介绍</a></li>
-                        <li><a href="/eventInformation#about">赛事相关</a></li>
+                        <li><a href="/competition#trends">赛事动态</a></li>
+                        <li><a href="/competition#intro">赛事介绍</a></li>
+                        <li><a href="/competition#about">赛事相关</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/match#signup">参赛报名</a>
+                    <a href="/event">比赛项目</a>
                     <ul class="two-level" style="z-index: 999;">
-                        <li><a href="/match#signup">参赛报名</a></li>
-                        <li><a href="/match#notice">公示公告</a></li>
+                        <li><a href="/event#signup">参赛报名</a></li>
+                        <li><a href="/event#notice">公示公告</a></li>
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">水平测试</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/doc">资源下载</a>
                 </li>
@@ -104,5 +104,6 @@
             })
         })
     </script>
+    <script type="text/javascript" src='/assets/js/script_index.js'></script>
 </body>
 </html>

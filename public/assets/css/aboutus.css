@@ -63,6 +63,7 @@
   display: block;
 }
 .warp .cut {
+  display: none;
   width: 100%;
   height: 1px;
   background: #666;

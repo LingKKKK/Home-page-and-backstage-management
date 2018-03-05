@@ -19,8 +19,8 @@
 // Route::get('/video', function () {return view('homepage.video');});
 // Route::get('/aboutus', function () {return view('homepage.aboutus');});
 Route::get('/', 'Home\IndexController@index');
-Route::get('/eventInformation', 'Home\IndexController@eventInformation');
-Route::get('/match', 'Home\IndexController@match');
+Route::get('/competition', 'Home\IndexController@eventInformation');
+Route::get('/event', 'Home\IndexController@match');
 Route::get('/doc', 'Home\IndexController@doc');
 Route::get('/video', 'Home\IndexController@video');
 Route::get('/aboutus', 'Home\IndexController@aboutus');
@@ -42,11 +42,11 @@ Route::get('/documentUpload', 'Cms\CmsController@documentUpload');
 Route::get('/newsManage', 'Cms\CmsController@newsManage');
 Route::get('/newsUpload', 'Cms\CmsController@newsUpload');
 Route::get('/bannerManage', 'Cms\CmsController@bannerManage');
-Route::get('/bannerUpload', 'Cms\CmsController@pictureUpload');
+Route::get('/bannerUpload', 'Cms\CmsController@bannerManage');
 Route::get('/videoManage', 'Cms\CmsController@videoManage');
 Route::get('/videoUpload', 'Cms\CmsController@videoUpload');
-Route::get('/bannerManage', 'Cms\CmsController@bannerManage');
-Route::get('/bannerUpload', 'Cms\CmsController@bannerUpload');
+Route::get('/pictureManage', 'Cms\CmsController@pictureManage');
+Route::get('/pictureUpload', 'Cms\CmsController@pictureUpload');
 Route::get('/setting', 'Cms\CmsController@setting');
 
 // 文档: 上传 删除
@@ -58,6 +58,9 @@ Route::post('/uploadDocs', 'Home\upLoadController@uploadDocs');\
 Route::post('/uploadNews', 'Cms\CmsController@uploadNews');
 Route::get('/deleteNews/{id}', 'Cms\CmsController@delete');
 Route::get('/news/{id}', 'Cms\CmsController@showNews');
+    // 新闻中图片上传
+Route::post('/uploadNewsPicture', 'Cms\CmsController@uploadNewsPicture');
+
 
 // 视频链接: 上传 删除
 Route::post('/uploadvideo', 'Cms\CmsController@uploadvideo');

@@ -85,7 +85,7 @@
   top: -37px;
 }
 .top .inner .user-dialog .noLogin {
-  display: none;
+  display: block;
 }
 .top .inner .user-dialog .noLogin a {
   color: #0088ff;
@@ -106,7 +106,7 @@
   float: left;
 }
 .top .inner .user-dialog .login {
-  display: block;
+  display: none;
 }
 .top .inner .user-dialog .login a {
   color: #0088ff;

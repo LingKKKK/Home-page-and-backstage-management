@@ -142,10 +142,13 @@
             // console.log(window.location.hash)
 
             if (window.location.hash == '#trends') {
+                console.log(1);
                 $('.info-nav li').eq(0).click();
             }else if (window.location.hash == '#intro') {
+                console.log(1);
                 $('.info-nav li').eq(1).click();
             }else if (window.location.hash == '#about') {
+                console.log(1);
                 $('.info-nav li').eq(2).click();
             }
 

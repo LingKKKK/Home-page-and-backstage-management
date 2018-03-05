@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="info clearfix">
-            <div class="left">
+            <!-- <div class="left">
                 <span class="title">参赛报名</span>
                 <ul class="info-nav clearfix">
                     <li class="active">参赛报名</li>
@@ -67,6 +67,42 @@
                         </li>
                     </ul>
                 </div>
+            </div> -->
+            <div class="item">
+                <a class="clearfix">
+                    <img src="assets/img/index/ba.png">
+                    <span> 大学生编程挑战赛</span>
+                </a>
+            </div>
+            <div class="item">
+                <a class="clearfix">
+                    <img src="assets/img/index/ba.png">
+                    <span> 大学生编程挑战赛</span>
+                </a>
+            </div>
+            <div class="item">
+                <a class="clearfix">
+                    <img src="assets/img/index/ba.png">
+                    <span> 大学生编程挑战赛</span>
+                </a>
+            </div>
+            <div class="item">
+                <a class="clearfix">
+                    <img src="assets/img/index/ba.png">
+                    <span> 大学生编程挑战赛</span>
+                </a>
+            </div>
+            <div class="item">
+                <a class="clearfix">
+                    <img src="assets/img/index/ba.png">
+                    <span> 大学生编程挑战赛</span>
+                </a>
+            </div>
+            <div class="item">
+                <a class="clearfix">
+                    <img src="assets/img/index/ba.png">
+                    <span> 大学生编程挑战赛</span>
+                </a>
             </div>
         </div>
     </div>
@@ -75,7 +111,7 @@
         $(function(){
             // console.log(window.location.hash)
             $('.img >li').eq(0).addClass('active');
-            $('nav-img >li').eq(0).addClass('active');
+            $('.nav-img >li').eq(0).addClass('active');
             $('.nav-img >li').each(function(index,el) {
                 $(this).click(function(){
                     $('.nav-img >li').removeClass('active');

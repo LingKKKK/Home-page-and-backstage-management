@@ -51,7 +51,7 @@
 .warp .info {
   width: 1280px;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-bottom: 60px;
 }
 .warp .info .left {
   width: 200px;
@@ -125,4 +125,34 @@
 }
 .warp .info .right .active {
   display: block;
+}
+.warp .info .item {
+  width: 300px;
+  margin: 30px 60px;
+  display: block;
+  float: left;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+.warp .info .item a {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.warp .info .item a img {
+  width: 100%;
+  display: block;
+}
+.warp .info .item a span {
+  font-family: 'Open Sans', sans-serif;
+  color: #7a7676;
+  line-height: 30px;
+  overflow-x: hidden;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  display: block;
+}
+.warp .info .item:hover {
+  transform: translateY(-5px);
 }

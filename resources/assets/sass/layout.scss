@@ -96,7 +96,7 @@
             top: -37px;
 
             .noLogin {
-                display: none;
+                display: block;
 
                 a {
                     color: #0088ff;
@@ -120,7 +120,7 @@
             }
 
             .login {
-                display: block;
+                display: none;
 
                 a {
                     color: #0088ff;

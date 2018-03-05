@@ -78,11 +78,30 @@ class CmsController extends Controller
         $cms_label = $request->input('label', '');
         $cms_content = $request->input('content', '');
         $creat_at = substr(date('Y-m-d H:i:s', time()), 0, 16);
+        // dd($cms_id, $cms_title, $cms_label, $cms_content, $creat_at);
 
         DB::insert('insert into cms_news (id, title, lebel, content, url, rule, creat_at, times) values (?, ?, ?, ?, ?, ?, ?, ?)', [$cms_id, $cms_title, $cms_label, $cms_content, '/news/'.$cms_id, '管理员', $creat_at, 1]);
 
         // return redirect('/cms#documentManage')->back();
         return redirect('/cms#newsManage');
+    }
+
+    public function uploadNewsPicture(Request $request)
+    {
+        $file = $request->file('picture');
+        $id = DB::table('cms_news_picture')->max('id') + 1;
+        $name = time().'.jpg';
+
+        $creat_at = substr(date('Y-m-d H:i:s', time()), 0, 16);
+
+        $file->move(storage_path('pics/post/'), $name);
+        DB::insert('insert into cms_news_picture (id, name, url, creat_at) values (?, ?, ?, ?)', [$id, $name, '/pics/post/'.$name, $creat_at]);
+
+        return response()->json([
+            'name' => $name,
+            'url' => '/pics/post/'.$name,
+            'path' => '/pics/post/'.$name
+        ]);
     }
 
     public function delete($id)

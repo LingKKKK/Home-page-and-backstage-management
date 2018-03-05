@@ -68,8 +68,32 @@
 
 <script>
     $(document).ready(function() {
-        $('#summernote').summernote();
-        $('.note-btn-group.btn-group.note-insert').hide();
+        $('#summernote').summernote({
+            callbacks: {
+                onImageUpload: function(file) {
+                    var formData = new FormData();
+                    formData.append("picture", file[0]);
+
+                    $.ajax({
+                        type: "post",
+                        url: '/uploadNewsPicture',
+                        data: formData,
+                        cache: false,
+                        processData: false,
+                        contentType: false,
+                        success: function(result) {
+                            $('#summernote').summernote('insertImage', result.path);
+                        },
+                        error: function() {
+                            alert("图片文件上传失败");
+                        }
+                    });
+                }
+            }
+        });
+
+
+        // $('.note-btn-group.btn-group.note-insert').hide();
         $('.note-editable.panel-body').css({
             'height': 'auto',
             'min-height': '300px'
@@ -103,6 +127,24 @@
                 }
             }
         })
+
+        // onImageUpload: function(files, editor, $editable) {　　
+        //     messageCenterUploadTokenModule.query(function(d) {　　　　
+        //         var formData = new FormData();　　　　
+        //         formData.append('file', files[0]);　　　　
+        //         tools.block.blockUI({
+        //             target: '#' + $scope.modalId
+        //         });　　　　
+        //         formData.append('token', d.token);　　　　
+        //         tools.uploadRequest('', formData).then(function(d) {　　　　
+        //             editor.insertImage($editable, "http://dhcrestmsg.dhero.cn/" + d.key);　　　　
+        //             tools.block.unblockUI();　　　　
+        //             tools.notification.success('上传图片成功');　　
+        //         }, function() {　　　　
+        //             tools.notification.error('上传图片失败');　　
+        //         })　　
+        //     });
+        // }
     });
     　　
     function trim(str) {　　
