@@ -49,7 +49,7 @@ Route::get('/pictureManage', 'Cms\CmsController@pictureManage');
 Route::get('/pictureUpload', 'Cms\CmsController@pictureUpload');
 
 Route::get('/eventManage', 'Cms\CmsController@eventManage');
-Route::get('/eventManage/{id}/sub/{subid}', 'Cms\CmsController@eventManage');
+Route::get('/getEvents/{event}/item/{competition}', 'Cms\CmsController@getEvents');
 
 Route::get('/eventRelease', 'Cms\CmsController@eventRelease');
 Route::get('/competitionRelease', 'Cms\CmsController@competitionRelease');
@@ -96,6 +96,12 @@ Route::post('/eventPost', 'Cms\CmsController@eventPost');
 Route::post('/competitionPost', 'Cms\CmsController@competitionPost');
 // 子赛项详情页面
 Route::post('/introPost', 'Cms\CmsController@introPost');
+
+// 大赛->赛项 页面跳转
+Route::get('/toCompetition/{id}', 'Home\IndexController@toCompetition');
+// 赛项->详情 页面跳转
+Route::get('/toIntro/{id}', 'Home\IndexController@toIntro');
+
 
 
 

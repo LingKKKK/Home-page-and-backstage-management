@@ -128,6 +128,7 @@
 }
 .warp .info .item {
   width: 300px;
+  height: 192px;
   margin: 30px 60px;
   display: block;
   float: left;
@@ -141,7 +142,9 @@
 }
 .warp .info .item a img {
   width: 100%;
+  height: 162px;
   display: block;
+  border: 1px solid #ccc;
 }
 .warp .info .item a span {
   font-family: 'Open Sans', sans-serif;

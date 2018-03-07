@@ -14,71 +14,71 @@ $(function() {
         var pathn, i;
         switch (sId) {
             case "#index":
-                pathn = "index";
+                pathn = "/index";
                 i = 0;
                 break;
             case "#documentManage":
-                pathn = "documentManage";
+                pathn = "/documentManage";
                 i = 1;
                 break;
             case "#documentUpload":
-                pathn = "documentUpload";
+                pathn = "/documentUpload";
                 i = 2;
                 break;
             case "#newsManage":
-                pathn = "newsManage";
+                pathn = "/newsManage";
                 i = 3;
                 break;
             case "#newsUpload":
-                pathn = "newsUpload";
+                pathn = "/newsUpload";
                 i = 4;
                 break;
             case "#setting":
-                pathn = "setting";
+                pathn = "/setting";
                 i = 5;
                 break;
             case "#pictureManage":
-                pathn = "pictureManage";
+                pathn = "/pictureManage";
                 i = 6;
                 break;
             case "#pictureUpload":
-                pathn = "pictureUpload";
+                pathn = "/pictureUpload";
                 i = 7;
                 break;
             case "#videoManage":
-                pathn = "videoManage";
+                pathn = "/videoManage";
                 i = 8;
                 break;
             case "#videoUpload":
-                pathn = "videoUpload";
+                pathn = "/videoUpload";
                 i = 9;
                 break;
             case "#bannerManage":
-                pathn = "bannerManage";
+                pathn = "/bannerManage";
                 i = 10;
                 break;
             case "#bannerUpload":
-                pathn = "bannerUpload";
+                pathn = "/bannerUpload";
                 i = 11;
                 break;
             case "#eventManage":
-                pathn = "eventManage";
+                pathn = "/eventManage";
                 i = 12;
                 break;
             case "#eventRelease":
-                pathn = "eventRelease";
+                pathn = "/eventRelease";
                 i = 13;
                 break;
             case "#competitionRelease":
-                pathn = "competitionRelease";
+                pathn = "/competitionRelease";
                 i = 14;
                 break;
             case "#introRelease":
-                pathn = "introRelease";
+                pathn = "/introRelease";
                 i = 15;
                 break;
             default:
-                pathn = "index";
+                pathn = "/index";
                 i = 0;
                 break;
         }

@@ -68,48 +68,22 @@
                     </ul>
                 </div>
             </div> -->
+            @if($eventList)
+            @foreach($eventList as $key => $item)
             <div class="item">
-                <a class="clearfix">
-                    <img src="assets/img/index/ba.png">
-                    <span> 大学生编程挑战赛</span>
+                <a class="clearfix" id="{{$item->id}}" href="/toCompetition/{{ $item->id }}">
+                    <img src="{{$item->event_bg}}">
+                    <span> {{$item->event_name}}</span>
                 </a>
             </div>
-            <div class="item">
-                <a class="clearfix">
-                    <img src="assets/img/index/ba.png">
-                    <span> 大学生编程挑战赛</span>
-                </a>
-            </div>
-            <div class="item">
-                <a class="clearfix">
-                    <img src="assets/img/index/ba.png">
-                    <span> 大学生编程挑战赛</span>
-                </a>
-            </div>
-            <div class="item">
-                <a class="clearfix">
-                    <img src="assets/img/index/ba.png">
-                    <span> 大学生编程挑战赛</span>
-                </a>
-            </div>
-            <div class="item">
-                <a class="clearfix">
-                    <img src="assets/img/index/ba.png">
-                    <span> 大学生编程挑战赛</span>
-                </a>
-            </div>
-            <div class="item">
-                <a class="clearfix">
-                    <img src="assets/img/index/ba.png">
-                    <span> 大学生编程挑战赛</span>
-                </a>
-            </div>
+            @endforeach
+            @endif
         </div>
     </div>
 
     <script>
         $(function(){
-            // console.log(window.location.hash)
+
             $('.img >li').eq(0).addClass('active');
             $('.nav-img >li').eq(0).addClass('active');
             $('.nav-img >li').each(function(index,el) {
@@ -143,6 +117,16 @@
                     }
                 })
             })
+
+            // $('.item a').each(function(){
+            //     $(this).unbind('click').bind('click', function(){
+            //         var id = $(this).attr('id')
+            //         console.log(id)
+            //         $.get("/toCompetition/" + id, function() {
+
+            //         })
+            //     })
+            // })
         })
     </script>
 @endsection

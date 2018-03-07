@@ -59,7 +59,6 @@
         transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     }
 </style>
-
 <section class="panel" style="padding-bottom: 1px;">
     <header class="panel-heading">
         赛事信息展示:
@@ -91,6 +90,78 @@
         </select>
     </div>
 
+    <div class="itemData">
+        @if($events)
+        <header class="panel-heading">
+            表数据信息 :  (<i id="spec" style="font-style: normal;">  赛事  </i>)
+             </span>
+        </header>
+        <div class="panel-body">
+            <div class="adv-table">
+                <table class="display table table-bordered" id="hidden-table-info">
+                    <thead>
+                        <tr>
+                            <th>赛事编号</th>
+                            <th>赛事名</th>
+                            <th class="hidden-phone">报名时间</th>
+                            <th class="hidden-phone">报名链接</th>
+                            <th class="aaa">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($events as $key => $item)
+                        <tr class="gradeX">
+                            <td>{{ $item->id or '' }}</td>
+                            <td>{{ $item->event_name or '' }}</td>
+                            <td class="hidden-phone">{{ $item->event_time or '' }}</td>
+                            <td class="center hidden-phone">{{ $item->event_href or '' }}</td>
+                            <td class="aa">
+                                <a id="{{ $item->id or '' }}">关闭报名</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @endif
+    </div>
+    <div class="getData">
+        <!-- @if($events)
+        <header class="panel-heading">
+            表数据信息 :  (<i id="spec" style="font-style: normal;">  赛事  </i>)
+             </span>
+        </header>
+        <div class="panel-body">
+            <div class="adv-table">
+                <table class="display table table-bordered" id="hidden-table-info">
+                    <thead>
+                        <tr>
+                            <th>赛事编号</th>
+                            <th>赛事名</th>
+                            <th class="hidden-phone">报名时间</th>
+                            <th class="hidden-phone">报名链接</th>
+                            <th class="aaa">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($events as $key => $item)
+                        <tr class="gradeX">
+                            <td>{{ $item->id or '' }}</td>
+                            <td>{{ $item->event_name or '' }}</td>
+                            <td class="hidden-phone">{{ $item->event_time or '' }}</td>
+                            <td class="center hidden-phone">{{ $item->event_href or '' }}</td>
+                            <td class="aa">
+                                <a id="{{ $item->id or '' }}">关闭报名</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @endif -->
+    </div>
 </section>
 
 <script src="assets/js/jquery-1.10.2.min.js"></script>
@@ -108,16 +179,9 @@
 <script>
     $(function(){
         $('.aaa').removeClass('sorting');
-
-        $('.gradeX a').each(function(index,el){
-            $(this).click(function(){
-                var id = $(this).attr('id');
-                $.get("/delete/" + id, function(data, status) {
-                    $('#documentManage').click();
-                });
-            })
-        })
-
+        $('.aa').unbind('click').bind('click', function(event) {
+            /* Act on the event */
+        });;
     })
 
     function ch1() {
@@ -146,14 +210,60 @@
         }else {
 
         }
-
-        console.log(event_val, competition_val)
+        getEventData();
     }
 
     function ch2() {
         var event_val = $('#event_id option:selected').val();
         var competition_val = $('#competition_id option:selected').val();
-        console.log(event_val, competition_val)
+        getEventData();
+    }
+
+    function getEventData(){
+        var event_val = $('#event_id option:selected').val();
+        var competition_val = $('#competition_id option:selected').val();
+        // console.log($('.itemData').html())
+        $.get("/getEvents/" + event_val + "/item/" + competition_val, function(data, status) {
+            if (!data) {
+                alert('抱歉, 获取失败, 请刷新页面之后再尝试!' )
+                return;
+            }else {
+                if (data.message == '详情信息') {
+                    var str = '';
+                    str += '<header class="panel-heading">表数据信息 :  (<i id="spec" style="font-style: normal;">  &nbsp'+ data.eventname + '&nbsp中&nbsp' + data.competitionname + '&nbsp的详情信息  </i>)</span>';
+                    str += '</header><div class="panel-body"><div class="adv-table"><table class="display table table-bordered" id="hidden-table-info"><thead><tr><th>赛项编号</th><th>banner图</th><th class="hidden-phone">详情文档</th><th class="hidden-phone">相关视频</th><th class="aaa">操作</th></tr></thead><tbody>';
+                    for(k in data.data){
+                        str += '<tr class="gradeX">';
+                        str += '<td>'+ data.data[k]["id"] +'</td><td>';
+                        str += '<a href="'+ data.data[k]["intro_banner"] +'">点击预览</a></td>';
+                        str += '<td class="hidden-phone"><a href="'+ data.data[k]["intro_doc"] +'">点击预览</a></td>';
+                        str += '<td class="hidden-phone"><a href="'+ data.data[k]["intro_video"] +'">点击预览</a></td>';
+                        str += '<td class="aa"><a id="'+ data.data[k]["id"] +'">删除</a>';
+                        str += '</td></tr>';
+                    }
+                    str += '</tbody></table></div></div>';
+                    $('.itemData').html(str);
+                    return;
+                }
+                if (data.message == '子赛项') {
+                    var str = '';
+                    str += '<header class="panel-heading">表数据信息 :  (<i id="spec" style="font-style: normal;">  &nbsp'+ data.event + '&nbsp中的赛项  </i>)</span>';
+                    str += '</header><div class="panel-body"><div class="adv-table"><table class="display table table-bordered" id="hidden-table-info"><thead><tr><th>赛项编号</th><th>赛项名</th><th class="hidden-phone">备注信息</th><th class="aaa">操作</th></tr></thead><tbody>';
+                    for(k in data.data){
+                        str += '<tr class="gradeX">';
+                        str += '<td>'+ data.data[k]["id"] +'</td>';
+                        str += '<td>'+ data.data[k]["competition_name"] +'</td>';
+                        str += '<td class="hidden-phone">'+ data.data[k]["competition_remark"] +'</td>';
+                        str += '<td class="aa">';
+                        str += '<a id="'+ data.data[k]["id"] +'">关闭报名</a>';
+                        str += '</td></tr>';
+                    }
+                    str += '</tbody></table></div></div>';
+                    $('.itemData').html(str);
+                    return;
+                }
+            }
+        });
     }
 </script>
 

@@ -346,4 +346,24 @@ class CmsController extends Controller
             // 跳转会赛项编辑页面
         }
     }
+
+    public function getEvents($event, $competition)
+    {
+        if ($event != 0 && $competition == 0) {
+            $eventList = DB::table('cms_event')->where('id', '=', $event)->get();
+            $eventname = $eventList[0]->event_name;
+            $competitionList = DB::table('cms_competition')->where('event_id', '=', $event)->get();
+            $item = ["message" => "子赛项", "data" => $competitionList, "event" => $eventname];
+            return $item;
+        }else if ($event != 0 && $competition != 0) {
+            $eventList = DB::table('cms_event')->where('id', '=', $event)->get();
+            $eventname = $eventList[0]->event_name;
+            $competitionList = DB::table('cms_competition')->where('id', '=', $competition)->get();
+            $competitionname = $competitionList[0]->competition_name;
+
+            $introList = DB::table('cms_intro')->where('competition_id', '=', $competition)->get();
+            $item = ["message" => "详情信息", "data" => $introList, 'eventname' => $eventname,  'competitionname' => $competitionname];
+            return $item;
+        }
+    }
 }

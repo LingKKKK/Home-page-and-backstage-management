@@ -20,17 +20,16 @@
         </div>
         <div class="cut" style=""></div>
         <div class="inner clearfix">
-            @if($results)
-                @foreach($results as $key => $result)
-                    <span class="id" style="display: none;">{{ $result->id or '' }}</span>
-                    <h1>{{ $result->title or '' }}</h1>
-                    <span class="label">{{ $result->lebel or '' }}</span>
-                    <span class="creat_at">发布时间: <i class="fa fa-dot-circle-o"></i>{{ $result->creat_at or '' }}</span>
-                    <span class="rule">发布者: {{ $result->rule or '' }}</span>
-                    <span class="times">浏览次数: {{ $result->times or '' }}</span>
-                    <div style="clear: both; margin-bottom: 30px;"></div>
-                    <p class="content" id="content">{!! $result->content or '' !!}</p>
-                @endforeach
+            @if($introList)
+            @foreach($introList as $key => $result)
+                <div style="clear: both; margin-bottom: 30px;"></div>
+                <p class="content" id="content">{!! $result->intro_content or '' !!}</p>
+                <div class="href" style="width: 400px; height: 50px; margin-top: 50px; margin: 0 auto; box-sizing: border-box;display: flex;">
+                    <a style="flex:1; text-align: center; line-height: 50px;font-size: 14px; font-weight: bold;" href="{{ $result->intro_doc or '' }}" target="_blank">相关文档</a>
+                    <a style="flex:1; text-align: center; line-height: 50px;font-size: 14px; font-weight: bold;" href="{{ $result->intro_video or '' }}" target="_blank">相关视频</a>
+                    <a style="flex:1; text-align: center; line-height: 50px;font-size: 14px; font-weight: bold;" href="{{ $result->intro_href or '' }}" target="_blank">点击报名</a>
+                </div>
+            @endforeach
             @endif
             <span class="error">未加载出数据, 请重新查找</span>
         </div>
@@ -52,8 +51,8 @@
             }
 
             setTimeout(function(){
-                console.log($('.id').length);
-                if ($('.id').length == 0) {
+                console.log($('.error').siblings('.href').length);
+                if ($('.error').siblings('.href').length == 0) {
                     $('.error').css('display', 'block');
                 } else {
                     $('.error').css('display', 'none');

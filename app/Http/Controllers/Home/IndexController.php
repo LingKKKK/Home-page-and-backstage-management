@@ -28,7 +28,8 @@ class IndexController extends Controller
     public function match(Request $request)
     {
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
-        return view('homepage.match', ['results' => $results]);
+        $eventList = DB::table('cms_event')->orderBy('id', 'asc')->get();
+        return view('homepage.match', ['results' => $results, 'eventList' => $eventList]);
     }
 
     public function video(Request $request)
@@ -48,4 +49,22 @@ class IndexController extends Controller
     {
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
         return view('homepage.aboutus', ['results' => $results]);
-    }}
+    }
+
+    public function toCompetition($id)
+    {
+        $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
+        $competitionList = DB::table('cms_competition')->where('event_id', '=', $id)->get();
+
+        return view('homepage.competition', ['results' => $results, 'competitionList' => $competitionList]);
+    }
+
+    public function toIntro($id)
+    {
+        $introList = DB::table('cms_intro')->where('competition_id', '=', $id)->get();
+        // dd($introList);
+
+        return view('homepage.intro', ['introList' => $introList]);
+    }
+
+}
