@@ -71,6 +71,10 @@
         box-sizing: border-box;
         padding-bottom: 100px;
 
+        img {
+            vertical-align: middle;
+        }
+
         .error {
             font-size: 17px;
             font-weight: bold;
@@ -149,6 +153,14 @@
             // padding: 0 12px;
             // margin: 0 0 20px!important;
             // padding: 50px 50px;
+
+            p {
+                color: red;
+
+                img {
+                    vertical-align: middle;
+                }
+            }
         }
     }
 }

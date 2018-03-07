@@ -47,7 +47,20 @@ Route::get('/videoManage', 'Cms\CmsController@videoManage');
 Route::get('/videoUpload', 'Cms\CmsController@videoUpload');
 Route::get('/pictureManage', 'Cms\CmsController@pictureManage');
 Route::get('/pictureUpload', 'Cms\CmsController@pictureUpload');
+
+Route::get('/eventManage', 'Cms\CmsController@eventManage');
+Route::get('/eventManage/{id}/sub/{subid}', 'Cms\CmsController@eventManage');
+
+Route::get('/eventRelease', 'Cms\CmsController@eventRelease');
+Route::get('/competitionRelease', 'Cms\CmsController@competitionRelease');
+Route::get('/introRelease', 'Cms\CmsController@introRelease');
+
 Route::get('/setting', 'Cms\CmsController@setting');
+
+
+
+
+
 
 // 文档: 上传 删除
 Route::get('/adminUpload', 'Home\upLoadController@upLoad');
@@ -76,3 +89,13 @@ Route::get('/deletepicture/{id}', 'Cms\CmsController@pictureDelete');
 // banner: 上传 删除
 Route::post('/uploadbanner', 'Cms\CmsController@uploadbanner');
 Route::get('/deletebanner/{id}', 'Cms\CmsController@bannerDelete');
+
+// 发布大赛信息
+Route::post('/eventPost', 'Cms\CmsController@eventPost');
+// 编辑赛项信息
+Route::post('/competitionPost', 'Cms\CmsController@competitionPost');
+// 子赛项详情页面
+Route::post('/introPost', 'Cms\CmsController@introPost');
+
+
+

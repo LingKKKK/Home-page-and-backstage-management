@@ -61,6 +61,22 @@ $(function() {
                 pathn = "bannerUpload";
                 i = 11;
                 break;
+            case "#eventManage":
+                pathn = "eventManage";
+                i = 12;
+                break;
+            case "#eventRelease":
+                pathn = "eventRelease";
+                i = 13;
+                break;
+            case "#competitionRelease":
+                pathn = "competitionRelease";
+                i = 14;
+                break;
+            case "#introRelease":
+                pathn = "introRelease";
+                i = 15;
+                break;
             default:
                 pathn = "index";
                 i = 0;

@@ -62,6 +62,9 @@
   box-sizing: border-box;
   padding-bottom: 100px;
 }
+.warp .inner img {
+  vertical-align: middle;
+}
 .warp .inner .error {
   font-size: 17px;
   font-weight: bold;
@@ -123,4 +126,10 @@
   padding-left: 20px;
   line-height: 28px;
   margin-left: 20px;
+}
+.warp .inner .content p {
+  color: red;
+}
+.warp .inner .content p img {
+  vertical-align: middle;
 }

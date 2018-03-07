@@ -77,6 +77,16 @@
                         <li class="item_click" data-id="bannerUpload" id="bannerUpload"><a> 图片上传</a></li>
                     </ul>
                 </li>
+
+                <li class="menu-list"><a><i class="fa fa-rocket"></i> <span> 比赛项目</span></a>
+                    <ul class="sub-menu-list">
+                        <li class="item_click" data-id="eventManage" id="eventManage"><a> 大赛管理</a></li>
+                        <li class="item_click" data-id="eventRelease" id="eventRelease"><a> 大赛发布</a></li>
+                        <li class="item_click" data-id="competitionRelease" id="competitionRelease"><a> 赛项编辑</a></li>
+                        <li class="item_click" data-id="introRelease" id="introRelease"><a> 子赛项详情页面编辑</a></li>
+                    </ul>
+                </li>
+
                 <li class="item_click" data-id="setting"  id="setting"><a><i class="fa fa-cogs"></i> <span> 设置</span></a></li>
             </ul>
 

@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Cms;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use DB;
 use Auth;
 
+error_reporting(E_ALL);
 class CmsController extends Controller
 {
     public function base()
@@ -255,5 +255,95 @@ class CmsController extends Controller
 
         // return redirect()->back();
         return redirect('/cms#videoManage');
+    }
+
+    public function eventManage()
+    {
+        $events = DB::table('cms_event')->orderBy('id', 'asc')->get();
+        $competitionList = DB::table('cms_competition')->orderBy('id', 'asc')->get();
+        $introList = DB::table('cms_intro')->orderBy('id', 'asc')->get();
+        return view('cmspage.eventManage', ['events' => $events, 'competitionList' => $competitionList, 'introList' => $introList]);
+        // return view('cmspage.eventManage');
+    }
+
+    public function eventRelease()
+    {
+        return view('cmspage.eventRelease');
+    }
+
+    public function competitionRelease()
+    {
+        $results = DB::table('cms_event')->orderBy('id', 'asc')->get();
+        return view('cmspage.competitionRelease', ['results' => $results]);
+    }
+
+    public function introRelease()
+    {
+        $events = DB::table('cms_event')->orderBy('id', 'asc')->get();
+        $competitionList = DB::table('cms_competition')->orderBy('id', 'asc')->get();
+        return view('cmspage.introRelease', ['events' => $events, 'competitionList' => $competitionList]);
+    }
+
+    public function eventPost(Request $request)
+    {
+        $id = DB::table('cms_event')->max('id') + 1;
+        $event_name = $request->input('event_name', '');
+        $event_time = $request->input('event_time', '');
+        $event_href = $request->input('event_href', '');
+        $event_remark = $request->input('event_remark', '');
+        $event_config = $request->input('event_config', '');
+        $file = $request->file();
+        // dd($id, $event_name, $event_time, $event_href, $event_config, $event_remark);
+        if ($request->file('file')->isValid()) {
+            $request->file('file')->move(storage_path('pics/post'), $event_name.'.jpg');
+            DB::insert('insert into cms_event (id, event_name, event_bg, event_time, event_href, event_remark, event_config) values (?, ?, ?, ?, ?, ?, ?)', [$id, $event_name, '/pics/post/'.$event_name.'.jpg', $event_time, $event_href, $event_remark, $event_config]);
+            // dd(1);
+            return redirect('/cms#competitionRelease');
+            // 跳转会赛项编辑页面
+        }
+    }
+
+    public function competitionPost(Request $request)
+    {
+        $id = DB::table('cms_competition')->max('id') + 1;
+        $event_id = $request->input('event_id', '');
+        $competition_name = $request->input('competition_name', '');
+        $competition_remark = $request->input('competition_remark', '');
+        $competition_config = $request->input('competition_config', '');
+        $file = $request->file();
+        // dd($id, $event_name, $event_time, $event_href, $event_config, $event_remark);
+        if ($request->file('file')->isValid()) {
+            $request->file('file')->move(storage_path('pics/post'), $competition_name.'.jpg');
+            DB::insert('insert into cms_competition (id, competition_name, competition_bg, competition_remark, competition_config, event_id) values (?, ?, ?, ?, ?, ?)', [$id, $competition_name, '/pics/post/'.$competition_name.'.jpg', $competition_remark, $competition_config, $event_id]);
+            // dd(1);
+            return redirect('/cms#introRelease');
+            // 跳转会赛项编辑页面
+        }
+    }
+
+    public function introPost(Request $request)
+    {
+        // dd($request->all());
+
+        $id = DB::table('cms_intro')->max('id') + 1;
+        $intro_content = $request->input('intro_content', '');
+        $event_id = $request->input('event_id', '');
+        $competition_id = $request->input('competition_id', '');
+        $intro_video = $request->input('intro_video', '');
+        $intro_href = $request->input('intro_href', '');
+        $intro_remark = $request->input('intro_remark', '');
+        $file_pics = $request->file('file_pics', '');
+        $file_docs = $request->file('file_docs', '');
+
+        if ($request->file('file_pics', '')->isValid() && $request->file('file_docs', '')->isValid()) {
+            $times = time();
+            $request->file('file_pics')->move(storage_path('pics/post'), $times.'.jpg');
+            $request->file('file_docs')->move(storage_path('docs/'), $times.'.pdf');
+            // dd( [$id, $intro_content, '/pics/post/'.$times.'.jpg', 'docs/'.$times.'.pdf', $intro_video, $intro_href, $intro_remark, $competition_id]);
+            DB::insert('insert into cms_intro (id, intro_content, intro_banner, intro_doc, intro_video, intro_href, intro_remark, competition_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [$id, $intro_content, '/pics/post/'.$times.'.jpg', 'docs/'.$times.'.pdf', $intro_video, $intro_href, $intro_remark, $competition_id]);
+            // dd('stop');
+            return redirect('/cms#eventManage');
+            // 跳转会赛项编辑页面
+        }
     }
 }

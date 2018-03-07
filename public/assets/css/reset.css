@@ -17,7 +17,7 @@ fieldset, img {
   border: 0 none;
 }
 
-/* 重置fieldset（表单分组）、图片的边框为0*/
+/* 重置fieldset（表单分组）、图片的边框为0 */
 dl, ul, ol, menu, li {
   list-style: none;
 }
@@ -91,7 +91,7 @@ table {
 
 /* 重置table属性 */
 img {
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 /* 图片在当前行内的垂直位置 */
