@@ -13,12 +13,16 @@
     <script src="/assets/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/addfont.css">
 </head>
 <body>
     <div class="top">
         <div class="inner">
             <div class="logo">
-                <img src="/assets/img/common/logo.png">
+                <img src="/assets/img/common/logo.jpeg">
+            </div>
+            <div class="search">
+                <img src="/assets/img/common/search.png">
             </div>
             <ul class="nav">
                 <li class="active">
@@ -26,39 +30,29 @@
                 </li>
                 <li>
                     <a href="/competition">关于竞赛</a>
-                    <ul class="two-level" style="z-index: 999;">
-                        <li><a href="/competition#trends">赛事动态</a></li>
-                        <li><a href="/competition#intro">赛事介绍</a></li>
-                        <li><a href="/competition#about">赛事相关</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="/event">比赛项目</a>
-                    <ul class="two-level" style="z-index: 999;">
-                        <li><a href="/event#signup">参赛报名</a></li>
-                        <li><a href="/event#notice">公示公告</a></li>
-                    </ul>
                 </li>
-                <!-- <li>
+                <li>
+                    <a href="/doc">参赛报名</a>
+                </li>
+                <li>
+                    <a href="/video">精彩回顾</a>
+                </li>
+                <li>
                     <a href="#">水平测试</a>
-                </li> -->
-                <li>
-                    <a href="/doc">资源下载</a>
-                </li>
-                <li>
-                    <a href="/video">视频资源</a>
-                </li>
-                <li>
-                    <a href="/aboutus">关于我们</a>
-                    <ul class="two-level" style="z-index: 999;">
-                        <li><a href="/aboutus#intro">品牌介绍</a></li>
-                        <li><a href="/aboutus#us">联系我们</a></li>
-                    </ul>
                 </li>
             </ul>
             <div class="user-dialog">
+                <span class="change">中文 / EN</span>
                 <div class="noLogin">
-                    <a id="register" href="#">注册</a><i>  /  </i><a id="login" href="#">登录</a>
+                    <a id="register" href="#">
+                    <img src="/assets/img/common/register.png">
+                    </a>
+                    <a id="login" href="#">
+                    <img src="/assets/img/common/login.png">
+                    </a>
                 </div>
                 <div class="login">
                     <a id="userInfo">
@@ -69,8 +63,32 @@
         </div>
     </div>
     @yield('content')
+    <div class="totop">
+        <img src="/assets/img/common/totio.png">
+    </div>
     <div class="footer">
-        <div class="inner">
+        <div class="top">
+            <div class="inner">
+                <p class="sp1">Conract Us</p>
+                <span class="sp2">+86-0521-66666666 66666666</span>
+                <span class="sp3">+86-0521-66666666</span>
+                <span class="sp4">bulabula@ohmalloy.com</span>
+                <span class="sp5">No.1111,Youyzttttzzz  troad,Baoshan,Beijing 201900</span>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="inner">
+                <span class="sp1">Powered by RoboCom 国际公开赛组委会 © 2002-2020</span>
+                <div class="lo">
+                    <img src="/assets/img/common/contant.png">
+                </div>
+                <div class="code">
+                    <img src="/assets/img/common/qrcode.png">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="inner">
             <div class="link">
                 <ul>
                     <li><a href="index.html">网站首页</a></li>
@@ -89,19 +107,31 @@
             <div class="code">
                 <img src="/assets/img/common/qrcode.png">
             </div>
-        </div>
+        </div> -->
     </div>
     <script>
         $(function(){
-            var oNav = $('.nav >li');
-            oNav.each(function() {
-                $(this).hover(function() {
-                    oNav.removeClass('active')
-                    $(this).addClass('active')
-                }, function() {
-                    oNav.removeClass('active')
-                });
-            })
+            // var oNav = $('.nav >li');
+            // oNav.each(function() {
+            //     $(this).hover(function() {
+            //         oNav.removeClass('active')
+            //         $(this).addClass('active')
+            //     }, function() {
+            //         oNav.removeClass('active')
+            //     });
+            // })
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= 100) {
+                    $('.totop').fadeIn(300);
+                } else {
+                    $('.totop').fadeOut(300);
+                }
+            });
+            $('.totop').click(function() {
+                $('html,body').animate({
+                    scrollTop: '0px'
+                }, 1000);
+            });
         })
     </script>
     <script type="text/javascript" src='/assets/js/script_index.js'></script>
