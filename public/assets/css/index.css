@@ -359,11 +359,11 @@
 }
 .warp .inner .event_information {
   width: 1190px;
-  height: 295px;
   border: 2px dashed #d33b33;
   box-sizing: border-box;
   margin-bottom: 70px;
   position: relative;
+  padding: 50px 0px;
 }
 .warp .inner .event_information .title {
   position: absolute;
@@ -375,6 +375,29 @@
   font-family: robocom;
   background: #fff;
   color: #d33b33;
+  padding: 0px 20px;
+}
+.warp .inner .event_information ul {
+  width: 600px;
+  margin: 0 auto;
+}
+.warp .inner .event_information ul li {
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+}
+.warp .inner .event_information ul li a {
+  display: block;
+  float: left;
+  background: #fff;
+}
+.warp .inner .event_information ul li b {
+  width: auto;
+}
+.warp .inner .event_information ul li i {
+  display: block;
+  float: right;
+  background: #fff;
 }
 .warp .parter {
   background: url(/assets/img/index/bg01.jpg) no-repeat center top;

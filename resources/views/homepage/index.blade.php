@@ -75,7 +75,11 @@
                     <ul>
                         @if($newsList)
                             @foreach($newsList as $key => $result)
-                            <li><a href="{{ $result->url or '' }}">{{ $result->title or '' }}</a><i>{{ $result->creat_at or '' }}</i></li>
+                            <li>
+                                <a href="{{ $result->url or '' }}">{{ $result->title or '' }}</a>
+                                <b></b>
+                                <i>{{ $result->creat_at or '' }}</i>
+                            </li>
                             @endforeach
                         @endif
                     </ul>

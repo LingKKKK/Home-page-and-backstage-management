@@ -416,11 +416,11 @@
 
         .event_information {
             width: 1190px;
-            height: 295px;
             border: 2px dashed #d33b33;
             box-sizing: border-box;
             margin-bottom: 70px;
             position: relative;
+            padding: 50px 0px;
 
             .title {
                 position: absolute;
@@ -440,7 +440,25 @@
                 margin: 0 auto;
 
                 li {
+                    height: 35px;
+                    line-height: 35px;
+                    font-size: 15px;
 
+                    a {
+                        display: block;
+                        float: left;
+                        background: #fff;
+                    }
+
+                    b {
+                        width: auto;
+                    }
+
+                    i {
+                        display: block;
+                        float: right;
+                        background: #fff;
+                    }
                 }
             }
         }
