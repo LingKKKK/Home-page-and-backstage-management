@@ -65,7 +65,7 @@
             left: 0px;
             top: 0px;
             z-index: 9;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.3);
             opacity: 0;
 
             .sp1 {
@@ -385,7 +385,7 @@
 
         .event_click {
             margin-bottom: 70px;
-            display: flex;
+            // display: flex;
 
             li {
                 display: block;
@@ -394,12 +394,14 @@
                 width: 500px;
                 border: 1px solid #ccc;
                 height: 270px;
-                flex: 1;
-                margin: 0px 75px;
+                // flex: 1;
+                // margin: 0px 75px;
+                margin: 0px 40px;
                 border-left: 7px solid red;
 
                 .bg {
-                    width: 100%;
+                    width: 500px;
+                    height: 270px;
                 }
 
                 a {
@@ -443,60 +445,197 @@
                     height: 35px;
                     line-height: 35px;
                     font-size: 15px;
+                    display: flex;
 
                     a {
                         display: block;
                         float: left;
                         background: #fff;
+                        flex: 1.7;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
                     }
 
                     b {
                         width: auto;
+                        flex: 1;
+                        border-bottom: 1px solid #ccc;
+                        transform: translateY(-16px);
+                        margin-left: 30px;
                     }
 
                     i {
                         display: block;
                         float: right;
                         background: #fff;
+                        text-align: center;
+                        flex: 1;
                     }
                 }
             }
         }
     }
 
-    .parter {
-        background: url(/assets/img/index/bg01.jpg) no-repeat center top;
-        padding-bottom: 50px;
 
-        .title {
-            padding-top: 70px;
-            text-align: center;
+    .video_pic {
+        width: 100%;
+        height: 870px;
+        background: #f7f7f7;
+        padding-bottom: 70px;
 
-            h4 {
-                font-size: 24px;
-                color: #686868;
+        .inner {
+            width: 1190px;
+            margin: 0 auto;
+            height: 100%;
+
+            .title {
+                text-align: center;
+                display: block;
+                font-family: robocom;
+                color: #d33b33;
+                font-size: 20px;
                 font-weight: bold;
-                padding-bottom: 10px;
+                line-height: 70px;
             }
 
-            p {
-                font-size: 16px;
-                font-weight: bold;
-                color: #929292;
+            .video-model {
+                width: 590px;
+                // height: 300px;
+                display: block;
+                float: left;
+                // border-radius: 10px;
+                margin-bottom: 70px;
+
+                video {
+                    width: 590px;
+                    // height: 300px;
+                    display: block;
+                    border-radius: 10px;
+                    border: 1px solid #ccc;
+                }
+            }
+
+            .publicity {
+                display: block;
+                float: left;
+                margin-left: 50px;
+                width: 550px;
+
+                .sp1 {
+                    font-size: 22px;
+                    font-family: robocom;
+                    color: #000000;
+                    display: block;
+                    line-height: 80px;
+                    font-weight: bold;
+                }
+
+                .sp2 {
+                    font-size: 14px;
+                    font-family: robocom;
+                    color: #000000;
+                    line-height: 30px;
+                }
+            }
+
+            .picture {
+                clear: both;
+                display: block;
+                width: 100%;
+                margin-bottom: 70px;
+                display: block;
+
+                .pic {
+                    box-sizing: border-box;
+                    position: relative;
+                    overflow: hidden;
+                    width: 384px;
+                    height: 296px;
+                    display: block;
+                    float: left;
+                    margin-left: 16px;
+
+                    img {
+                        width: 384px;
+                        height: 296px;
+                    }
+
+                    .tips {
+                        position: absolute;
+                        left: 30px;
+                        top: 0px;
+                        width: 90px;
+                        height: 90px;
+                        background: red;
+                        line-height: 45px;
+                        text-align:center;
+                        font-size: 30px;
+                        color: #fff;
+                    }
+
+                    &:nth-child(1){
+                        margin-left: 0px;
+                    }
+                }
+            }
+            .show_more {
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 70px;
+                width: 80px;
+                cursor: pointer;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
             }
         }
+    }
 
-        .lunbo {
-            margin-top: 20px;
+    .parter {
+        width: 100%;
 
-            .prev {
-                left: 0;
-                background: url(/assets/img/index/left01.png) no-repeat center center;
-            }
+        .inner {
+            width: 1190px;
+            margin: 0 auto;
+            height: 100%;
+            padding-top: 30px;
+            padding-bottom: 50px;
 
-            .next {
-                right: 0;
-                background: url(/assets/img/index/right01.png) no-repeat center center;
+            ul {
+                width: 100%;
+
+                li {
+                    display: block;
+                    float: left;
+                    margin-left: 22px;
+
+                    .title {
+                        color: #397dce;
+                        font-family: robocom;
+                        font-size: 20px;
+                        line-height: 50px;
+                        display: block;
+                        font-weight: bold;
+                    }
+
+                    .logo {
+                        display: block;
+                        float: left;
+                        width: 70px;
+                        height: 70px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    &:nth-child(1){
+                        margin-left: 0px;
+                    }
+                }
             }
         }
     }

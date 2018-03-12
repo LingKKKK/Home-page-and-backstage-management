@@ -49,7 +49,7 @@
   background: #0195eb;
 }
 .warp .info {
-  width: 1280px;
+  width: 1000px;
   margin: 0 auto;
   margin-bottom: 60px;
 }
@@ -127,9 +127,9 @@
   display: block;
 }
 .warp .info .item {
-  width: 300px;
-  height: 192px;
-  margin: 30px 60px;
+  width: 418px;
+  height: 343px;
+  margin: 30px 35px;
   display: block;
   float: left;
   transform: translateY(0px);

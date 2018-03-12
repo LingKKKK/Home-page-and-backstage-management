@@ -15,8 +15,10 @@ class IndexController extends Controller
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
         $newsList = DB::table('cms_news')->orderBy('id', 'desc')->take(10)->get();
         $docsList = DB::table('docs')->orderBy('id', 'desc')->take(10)->get();
-        $videoList = DB::table('cms_video')->orderBy('id', 'desc')->take(10)->get();
-        return view('homepage.index', ['results' => $results, 'newsList' => $newsList, 'docsList' => $docsList, 'videoList' => $videoList]);
+        $videoList = DB::table('cms_video')->orderBy('id', 'desc')->take(1)->get();
+        $eventList = DB::table('cms_event')->orderBy('id', 'desc')->take(2)->get();
+        $pictureList = DB::table('cms_picture')->orderBy('id', 'desc')->take(3)->get();
+        return view('homepage.index', ['results' => $results, 'newsList' => $newsList, 'docsList' => $docsList, 'videoList' => $videoList, 'eventList' => $eventList, 'pictureList' => $pictureList]);
     }
 
     public function eventInformation(Request $request)

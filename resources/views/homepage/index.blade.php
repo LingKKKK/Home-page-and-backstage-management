@@ -45,21 +45,17 @@
             <img src="/assets/img/index/toEnroll.png">
         </div>
         <div class="inner clearfix">
-            <ul class="event_click">
+            <ul class="event_click clearfix">
+            @if($eventList)
+            @foreach($eventList as $key => $result)
                 <li>
-                    背景图
-                    <img class="bg" src="">
-                    <a class="event_href">
+                    <img class="bg" src="{{$result->event_bg}}">
+                    <a class="event_href" href="{{$result->event_href}}">
                         <img src="/assets/img/index/event_href.png">
                     </a>
                 </li>
-                <li>
-                    背景图
-                    <img class="bg" src="">
-                    <a class="event_href">
-                        <img src="/assets/img/index/event_href.png">
-                    </a>
-                </li>
+            @endforeach
+            @endif
             </ul>
             <a class="show_more">
                 <img src="/assets/img/common/more.png">
@@ -86,6 +82,104 @@
                 </div>
             </div>
         </div>
+        <div class="video_pic">
+            <div class="inner">
+                <span class="title">精彩回顾</span>
+                @if($videoList)
+                @foreach($videoList as $key => $result)
+                <div class="video-model">
+                    <video src="{{$result->url}}" controls="controls">您的浏览器不支持 video 标签</video>
+                </div>
+                <div class="publicity">
+                    <span class="sp1">公示公告</span>
+                    <span class="sp2">
+                        2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛2018世界机器人大赛
+                    </span>
+                </div>
+                @endforeach
+                @endif
+                <div class="picture clearfix">
+                    @if($pictureList)
+                    @foreach($pictureList as $key => $result)
+                        <div class="pic">
+                            <img src="{{$result->url}}">
+                            <span class="tips">精彩<br>图片</span>
+                        </div>
+                    @endforeach
+                    @endif
+                </div>
+                <a class="show_more">
+                    <img src="/assets/img/common/more.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="parter clearfix">
+            <div class="inner clearfix">
+                <ul class="clearfix">
+                    <li>
+                        <span class="title">合作媒体</span>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">支持媒体</span>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">支持单位</span>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">合作伙伴</span>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo black">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                        <div class="logo white">
+                            <img src="/pics/awdwad.jpg">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
 
     </div>
@@ -105,17 +199,17 @@
             })
 
             $(".banner").hover(function() {
-                $('.banner .img li img').css({
-                    "filter": "blur(3px)"
-                }, 500);
-                $('.model').css({
+                // $('.banner .img li img').css({
+                //     "filter": "blur(3px)"
+                // }, 500);
+                $('.model').animate({
                     "opacity": "1"
                 }, 500);
             }, function() {
-                 $('.banner .img li img').css({
-                    "filter": "blur(0px)"
-                }, 500);
-                $('.model').css({
+                // $('.banner .img li img').css({
+                //     "filter": "blur(0px)"
+                // }, 500);
+                $('.model').animate({
                     "opacity": "0"
                 }, 500);
             });

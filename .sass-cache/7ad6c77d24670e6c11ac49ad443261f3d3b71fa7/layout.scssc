@@ -1,5 +1,5 @@
 3.4.21 (Selective Steve)
-701f48699bf85e6ab312e3babc3f14389fa66537
+a3531858fffbc35c31f20e955ad3888eac5ed492
 o:Sass::Tree::RootNode:
 @linei:@template"¨'
 
@@ -190,7 +190,7 @@
 
             .sp1 {
                 line-height: 50px;
-                color: #f2f2f2;
+                color: #a0a0a0;
                 font-size: 14px;
                 margin-bottom: 20px;
                 display: block;
@@ -421,7 +421,7 @@
 :@source_rangeo:Sass::Source::Range	:@end_poso:Sass::Source::Position;i:@offseti:@start_poso;;i;i:@importero: Sass::Importers::Filesystem:@real_root"/home/dev/test/robocom:
 @root"/home/dev/test/robocom:@same_name_warningso:Set:
 @hash{ :
-@file"(./resources/assets/sass/layout.scss:@options{ :@has_childrenT:@children[&o:Sass::Tree::RuleNode;i:
+@file"=/home/dev/test/robocom/resources/assets/sass/layout.scss:@options{ :@has_childrenT:@children[&o:Sass::Tree::RuleNode;i:
 @tabsi ;o;		;
 o;;i;i;o;;i;i;@
 ;@:@parsed_ruleso:"Sass::Selector::CommaSequence;i:@members[o:Sass::Selector::Sequence;i;[o:#Sass::Selector::SimpleSequence;i;o;		;
@@ -1487,7 +1487,7 @@ o;;i½;i!;o;;i½;i;@
 o;;i½;i';@¶	;@
 ;@;@;[ ;/;0;1o;		;
 @º	;o;;i½;i#;@
-;@o;';i¾;(o;);i¾;(o;*	;("#f2f2f2;+0;@;,;-;o;		;
+;@o;';i¾;(o;);i¾;(o;*	;("#a0a0a0;+0;@;,;-;o;		;
 o;;i¾;i$;o;;i¾;i;@
 ;@;.o;		;
 o;;i¾;i;o;;i¾;i;@
