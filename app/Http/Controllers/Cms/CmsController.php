@@ -126,7 +126,8 @@ class CmsController extends Controller
 
     public function pictureUpload()
     {
-        return view('cmspage.pictureUpload');
+        $results = DB::table('cms_competition')->orderBy('id', 'asc')->get();
+        return view('cmspage.pictureUpload', ['results' => $results]);
     }
 
     public function uploadpicture(Request $request)

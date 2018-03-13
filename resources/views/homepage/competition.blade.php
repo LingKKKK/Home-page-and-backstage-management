@@ -1,14 +1,14 @@
 @extends('homepage.layout')
 
 @section('content')
-    <link rel="stylesheet" href="/assets/css/match.css">
+    <link rel="stylesheet" href="/assets/css/competition.css">
 
     <div class="warp" style="min-height: 671px;">
         <div class="banner">
             <ul class="img">
                 @if($results)
                     @foreach($results as $key => $result)
-                        @if($result->classify == 'match')
+                        @if($result->classify == 'index')
                             <li>
                                 <img src="{{ $result->url or '' }}">
                             </li>
@@ -25,15 +25,21 @@
                     @endforeach
                 @endif
             </ul>
+            <div class="model">
+                <span class="sp1">青少年人工智能编程挑战赛</span>
+                <span class="sp2">精彩回顾</span>
+                <a class="sp3">了解详情</a>
+            </div>
         </div>
         <div class="info clearfix">
             @if($competitionList)
             @foreach($competitionList as $key => $item)
             <div class="item">
-                <a class="clearfix" id="{{$item->id}}" href="/toIntro/{{ $item->id }}">
-                    <img src="{{$item->competition_bg}}">
+                <div class="item_intro">
                     <span> {{$item->competition_name}}</span>
-                </a>
+                    <a id="{{$item->id}}" href="/toIntro/{{ $item->id }}">了解详情  >></a>
+                </div>
+                <img src="{{$item->competition_bg}}">
             </div>
             @endforeach
             @endif
@@ -55,27 +61,36 @@
                 })
             })
 
-            if (window.location.hash == '#signup') {
-                $('.info-nav li').eq(0).click();
-            }else if (window.location.hash == '#notice') {
-                $('.info-nav li').eq(1).click();
-            }
+            $('.nav li').each(function(index, el) {
+                $(this).removeClass('active');
+                $('.nav li').eq(2).addClass('active');
+            });
 
-            $('.info-nav >li').each(function(index,el) {
-                $(this).click(function(){
-                    $('.info-nav >li').removeClass('active');
-                    $(this).addClass('active');
+            $(".banner").hover(function() {
+                $('.model').animate({
+                    "opacity": "1"
+                }, 500);
+            }, function() {
+                $('.model').animate({
+                    "opacity": "0"
+                }, 500);
+            });
 
-                    $('.right .box').removeClass('active');
-                    $('.right .box').eq(index).addClass('active');
+            // $('.info-nav >li').each(function(index,el) {
+            //     $(this).click(function(){
+            //         $('.info-nav >li').removeClass('active');
+            //         $(this).addClass('active');
 
-                    if (index == 0) {
-                        window.location.hash == "#signup";
-                    } else if (index == 1) {
-                        window.location.hash == "#notice";
-                    }
-                })
-            })
+            //         $('.right .box').removeClass('active');
+            //         $('.right .box').eq(index).addClass('active');
+
+            //         if (index == 0) {
+            //             window.location.hash == "#signup";
+            //         } else if (index == 1) {
+            //             window.location.hash == "#notice";
+            //         }
+            //     })
+            // })
         })
     </script>
 @endsection

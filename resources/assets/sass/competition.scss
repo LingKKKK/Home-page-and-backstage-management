@@ -105,109 +105,74 @@
         }
     }
 
-    .cut {
-        width: 100%;
-        height: 0px;
-        border: 1px solid #ccc;
-    }
 
-    .inner {
-        width: 1280px;
+    .info {
+        width: 1190px;
         margin: 0 auto;
-        height: 100%;
-        padding: 50px 50px;
-        box-sizing: border-box;
-        padding-bottom: 100px;
+        margin-bottom: 60px;
 
-        img {
-            vertical-align: middle;
-        }
-
-        .error {
-            font-size: 17px;
-            font-weight: bold;
-            text-align: center;
+        .item {
+            border-left: 10px solid red;
+            position: relative;
+            width: 540px;
+            box-sizing: border-box;
             display: block;
-            color: #f90303;
-            letter-spacing: 2px;
-            display: none;
-        }
-
-        h1 {
-            text-align: center;
-            line-height: 100px;
-            font-size: 50px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #323232;
-        }
-
-        .label {
-            padding: 5px 12px;
-            color: #fff;
-            font-size: 18px;
-            text-transform: uppercase;
-            margin-right: 40px;
             float: left;
-            display: inline;
-            letter-spacing: 1px;
-            background-color: #18376b;
             margin-left: 100px;
-        }
+            margin-bottom: 70px;
+            transform: translateY(0px);
+            transition: all 0.5s;
 
-        .content {
-            display: block;
-        }
+            .item_intro {
+                width: 418px;
+                height: 343px;
+                background: #3c3c3c;
+                position: relative;
 
-        .creat_at {
-            color: #999;
-            font-size: 14px;
-            float: left;
-            letter-spacing: 1px;
-            line-height: 20px;
-            padding-left: 20px;
-            line-height: 28px;
-            margin-left: 20px;
-        }
-
-        .rule {
-            color: #999;
-            font-size: 14px;
-            float: left;
-            letter-spacing: 1px;
-            line-height: 20px;
-            padding-left: 20px;
-            line-height: 28px;
-            margin-left: 20px;
-        }
-
-        .times {
-            color: #999;
-            font-size: 14px;
-            float: left;
-            letter-spacing: 1px;
-            line-height: 20px;
-            padding-left: 20px;
-            line-height: 28px;
-            margin-left: 20px;
-        }
-
-        .content {
-            // clear: both;
-            // display: block;
-            // float: left;
-            // font-size: 19px;
-            // line-height: 1.5em;
-            // padding: 0 12px;
-            // margin: 0 0 20px!important;
-            // padding: 50px 50px;
-
-            p {
-                color: red;
-
-                img {
-                    vertical-align: middle;
+                span {
+                    font-family: robocom;
+                    letter-spacing: 1px;
+                    display: block;
+                    line-height: 58px;
+                    font-size: 30px;
+                    color: #fff;
+                    display: block;
+                    text-align: left;
+                    font-weight: bold;
+                    padding-top: 40px;
+                    width: 170px;
+                    margin-left: 22px;
                 }
+
+                a {
+                    font-family: robocom;
+                    text-align: center;
+                    display: block;
+                    font-size: 13px;
+                    color: #fff;
+                    display: block;
+                    text-align: left;
+                    position: absolute;
+                    left: 22px;
+                    bottom: 50px;
+                    letter-spacing: 2px;
+                }
+            }
+
+            img {
+                position: absolute;
+                width: 320px;
+                height: 320px;
+                left: 228px;
+                top: 12px;
+            }
+
+            &:nth-child(2n+1) {
+                margin-left: 0px;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
             }
         }
     }

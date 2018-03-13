@@ -8,7 +8,7 @@
             <ul class="img">
                 @if($results)
                     @foreach($results as $key => $result)
-                        @if($result->classify == 'match')
+                        @if($result->classify == 'index')
                             <li>
                                 <img src="{{ $result->url or '' }}">
                             </li>
@@ -25,56 +25,31 @@
                     @endforeach
                 @endif
             </ul>
+            <div class="model">
+                <span class="sp1">青少年人工智能编程挑战赛</span>
+                <span class="sp2">精彩回顾</span>
+                <a class="sp3">了解详情</a>
+            </div>
         </div>
         <div class="info clearfix">
-            <!-- <div class="left">
-                <span class="title">参赛报名</span>
-                <ul class="info-nav clearfix">
-                    <li class="active">参赛报名</li>
-                    <li>公示公告</li>
-                </ul>
-            </div>
-            <div class="right clearfix">
-                <div class="box signup active">
-                    <ul>
-                        <li>
-                            <img src="assets/img/index/ba.png">
-                            <span class="sp1">青少年人工智能编程挑战赛</span>
-                            <span class="sp2">2018-02-10</span>
-                            <a class="sp3" href="http://ss.robocom.com.cn">点击查看</a>
-                        </li>
-                        <li>
-                            <img src="assets/img/index/ba.png">
-                            <span class="sp1">青少年人工智能编程挑战赛</span>
-                            <span class="sp2">2018-02-10</span>
-                            <a class="sp3" href="http://ss.robocom.com.cn">点击查看</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="box notice">
-                    <ul>
-                        <li>
-                            <img src="assets/img/index/baa.png">
-                            <span class="sp1">青少年人工智能编程挑战赛</span>
-                            <span class="sp2">2018-02-10</span>
-                            <a class="sp3" href="http://ss.robocom.com.cn">点击查看</a>
-                        </li>
-                        <li>
-                            <img src="assets/img/index/baa.png">
-                            <span class="sp1">青少年人工智能编程挑战赛</span>
-                            <span class="sp2">2018-02-10</span>
-                            <a class="sp3" href="http://ss.robocom.com.cn">点击查看</a>
-                        </li>
-                    </ul>
-                </div>
-            </div> -->
             @if($eventList)
             @foreach($eventList as $key => $item)
             <div class="item">
-                <a class="clearfix" id="{{$item->id}}" href="/toCompetition/{{ $item->id }}">
-                    <img src="{{$item->event_bg}}">
-                    <span> {{$item->event_name}}</span>
+                <div class="item_model">
+                    <a id="{{$item->id}}" href="/toCompetition/{{ $item->id }}" class="toCompetition">点击查看赛项内容</a>
+                </div>
+                <a class="all clearfix">
+                    <img class="bg" src="{{$item->event_bg}}">
+                    <div class="intro">
+                        <span> {{$item->event_name}}</span>
+                        <p> {{$item->event_time}}</p>
+                    </div>
                 </a>
+                <div class="href">
+                    <a href="{{$item->event_href}}"><img src="/assets/img/enroll.png"></a>
+                    <a><img src="/assets/img/event_tips.png"></a>
+                    <a><img src="/assets/img/add_tips.png"></a>
+                </div>
             </div>
             @endforeach
             @endif
@@ -96,11 +71,38 @@
                 })
             })
 
+            $('.nav li').each(function(index, el) {
+                $(this).removeClass('active');
+                $('.nav li').eq(2).addClass('active');
+            });
+
             if (window.location.hash == '#signup') {
                 $('.info-nav li').eq(0).click();
             }else if (window.location.hash == '#notice') {
                 $('.info-nav li').eq(1).click();
             }
+
+            $(".banner").hover(function() {
+                $('.model').animate({
+                    "opacity": "1"
+                }, 500);
+            }, function() {
+                $('.model').animate({
+                    "opacity": "0"
+                }, 500);
+            });
+
+            $(".info .item").each(function(index, el) {
+                $(this).hover(function() {
+                    $(this).find('.item_model').animate({
+                        "opacity": "1"
+                    }, 500);
+                }, function() {
+                    $(this).find('.item_model').animate({
+                        "opacity": "0"
+                    }, 500);
+                });
+            });
 
             $('.info-nav >li').each(function(index,el) {
                 $(this).click(function(){

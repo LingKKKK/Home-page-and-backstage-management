@@ -1,25 +1,52 @@
 @extends('homepage.layout')
 
 @section('content')
-    <link rel="stylesheet" href="/assets/css/news.css">
+    <link rel="stylesheet" href="/assets/css/intro.css">
 
     <div class="warp" style="min-height: 671px;">
         <div class="banner">
             <ul class="img">
-                <li class="active">
-                    <img src="/assets/img/index/banner_1.jpg">
-                </li>
-                <li>
-                    <img src="/assets/img/index/banner_2.jpg">
-                </li>
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'index')
+                            <li>
+                                <img src="{{ $result->url or '' }}">
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
             <ul class="nav-img">
-                <li class="active"></li>
-                <li></li>
+                @if($results)
+                    @foreach($results as $key => $result)
+                        @if($result->classify == 'index')
+                            <li></li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
+            <div class="model">
+                <span class="sp1">青少年人工智能编程挑战赛</span>
+                <span class="sp2">精彩回顾</span>
+                <a class="sp3">了解详情</a>
+            </div>
         </div>
-        <div class="cut" style=""></div>
         <div class="inner clearfix">
+            @if($pic)
+            <div class="nav_pic clearfix">
+                <div class="box_pix">
+                @foreach($pic as $key => $item)
+                    <div class="box_item"><img src="{{$item->url}}"></div>
+                @endforeach
+                @foreach($pic as $key => $item)
+                    <div class="box_item"><img src="{{$item->url}}"></div>
+                @endforeach
+                </div>
+            </div>
+            <a class="pre"> < </a>
+            <a class="next"> > </a>
+            @endif
+
             @if($introList)
             @foreach($introList as $key => $result)
                 <div style="clear: both; margin-bottom: 30px;"></div>
@@ -36,9 +63,38 @@
 
     </div>
     <script type="text/javascript">
+        var length = $('.box_pix .box_item').length;
+        var width = 393*length
+        $('.box_pix').css('width', width);
+
         $(function(){
-            // console.log($('#text').text());
-            // $('#content').html(encodeHtml($('#text').html()));
+            $('.img >li').eq(0).addClass('active');
+            $('.nav-img >li').eq(0).addClass('active');
+            $('.nav-img >li').each(function(index,el) {
+                $(this).click(function(){
+                    $('.nav-img >li').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.img >li').removeClass('active');
+                    $('.img li').eq(index).addClass('active');
+                })
+            })
+
+            $('.nav li').each(function(index, el) {
+                $(this).removeClass('active');
+                $('.nav li').eq(2).addClass('active');
+            });
+
+            $(".banner").hover(function() {
+                $('.model').animate({
+                    "opacity": "1"
+                }, 500);
+            }, function() {
+                $('.model').animate({
+                    "opacity": "0"
+                }, 500);
+            });
+
             function encodeHtml(str) {
                 var encodedStr = "";
                 if (str == "") return encodedStr;
@@ -58,6 +114,15 @@
                     $('.error').css('display', 'none');
                 }
             }, 1000)
+
+            var index = 1;
+            $('.pre').click(function(){
+
+            })
+
+            $('.next').click(function(){
+                console.log(1)
+            })
         })
     </script>
 @endsection

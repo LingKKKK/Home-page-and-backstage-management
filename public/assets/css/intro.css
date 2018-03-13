@@ -97,14 +97,57 @@
   width: 100%;
   height: 0px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 .warp .inner {
-  width: 1280px;
+  width: 1190px;
   margin: 0 auto;
   height: 100%;
-  padding: 50px 50px;
   box-sizing: border-box;
   padding-bottom: 100px;
+  position: relative;
+}
+.warp .inner .nav_pic {
+  width: 1180px;
+  height: 295px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.warp .inner .nav_pic .box_pix {
+  width: 1190px;
+  height: 295px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.warp .inner .nav_pic .box_pix .box_item {
+  width: 383px;
+  height: 295px;
+  display: block;
+  float: left;
+  margin: 0px 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.warp .inner .nav_pic .box_pix .box_item img {
+  width: 383px;
+  height: 295px;
+}
+.warp .inner .pre {
+  position: absolute;
+  left: -60px;
+  top: 105px;
+  font-size: 70px;
+  cursor: pointer;
+}
+.warp .inner .next {
+  position: absolute;
+  right: -60px;
+  top: 105px;
+  font-size: 70px;
+  cursor: pointer;
 }
 .warp .inner img {
   vertical-align: middle;

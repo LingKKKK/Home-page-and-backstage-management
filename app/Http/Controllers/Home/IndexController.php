@@ -63,10 +63,11 @@ class IndexController extends Controller
 
     public function toIntro($id)
     {
+        $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
         $introList = DB::table('cms_intro')->where('competition_id', '=', $id)->get();
-        // dd($introList);
+        $pic = DB::table('cms_picture')->where('classify', '=', $id)->get();
 
-        return view('homepage.intro', ['introList' => $introList]);
+        return view('homepage.intro', ['introList' => $introList, 'results' => $results, 'id' => $id, 'pic' => $pic]);
     }
 
 }
