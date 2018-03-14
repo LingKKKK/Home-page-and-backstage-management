@@ -27,6 +27,11 @@
                     <option value="forum" {{old('classify') == 'forum' ? 'selected' : ''}}>大会论坛</option>
                     <option value="exposition" {{old('classify') == 'exposition' ? 'selected' : ''}}>博览会</option>
                     <option value="contest" {{old('classify') == 'contest' ? 'selected' : ''}}>大赛</option>
+                    @if($results)
+                    @foreach($results as $key => $result)
+                    <option value="{{$result->competition_name}}">{{$result->competition_name}}</option>
+                    @endforeach
+                    @endif
                 </select>
             </div>
 

@@ -181,7 +181,8 @@ class CmsController extends Controller
 
     public function videoUpload()
     {
-        return view('cmspage.videoUpload');
+        $results = DB::table('cms_competition')->orderBy('id', 'asc')->get();
+        return view('cmspage.videoUpload', ['results' => $results]);
     }
 
     public function bannerManage()

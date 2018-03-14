@@ -37,7 +37,9 @@ class IndexController extends Controller
     public function video(Request $request)
     {
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
-        return view('homepage.video', ['results' => $results]);
+        $pics = DB::table('cms_picture')->orderBy('id', 'asc')->get();
+        $videos = DB::table('cms_video')->orderBy('id', 'asc')->get();
+        return view('homepage.video', ['results' => $results, 'pics' => $pics, 'videos' => $videos]);
     }
 
     public function doc(Request $request)
@@ -65,9 +67,11 @@ class IndexController extends Controller
     {
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
         $introList = DB::table('cms_intro')->where('competition_id', '=', $id)->get();
-        $pic = DB::table('cms_picture')->where('classify', '=', $id)->get();
+        $competition = DB::table('cms_competition')->where('id', '=', $id)->get();
+        $name = $competition->toArray()[0]->competition_name;
+        $pic = DB::table('cms_picture')->where('classify', '=', $name)->get();
 
-        return view('homepage.intro', ['introList' => $introList, 'results' => $results, 'id' => $id, 'pic' => $pic]);
+        return view('homepage.intro', ['introList' => $introList, 'results' => $results, 'name' => $name, 'pic' => $pic]);
     }
 
 }

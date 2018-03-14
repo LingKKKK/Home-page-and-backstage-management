@@ -20,7 +20,7 @@
                         <a style="cursor: pointer;">
                             <img src= '{{ $result->url or '' }}' />
                         </a>
-                        <p>{{ $result->name or '' }}</p>
+                        <p>{{ $result->name or '' }} < {{ $result->classify or '' }} ></p>
                         <div class="delete" id="{{ $result->id or '' }}" style="cursor: pointer;">x</div>
                     </div>
                 @endforeach

@@ -2,6 +2,25 @@
     width: 100%;
     display: block;
 
+    .img_model {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+        display: none;
+
+        img {
+            width: 700px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
     .banner {
         width: 100%;
         height: 585px;
@@ -127,6 +146,7 @@
             position: relative;
             overflow: hidden;
             margin: 0 auto;
+            margin-bottom: 100px;
 
             .box_pix {
                 width: 1190px;
@@ -135,6 +155,7 @@
                 left: 0px;
                 top: 0px;
                 overflow: hidden;
+                transition: all 1s;
 
                 .box_item {
                     width: 383px;
@@ -144,10 +165,12 @@
                     margin: 0px 5px;
                     border: 1px solid #ccc;
                     box-sizing: border-box;
+                    transition: all 1s;
 
                     img {
                         width: 383px;
                         height: 295px;
+                        cursor: pointer;
                     }
                 }
             }
@@ -258,6 +281,51 @@
                 img {
                     vertical-align: middle;
                 }
+            }
+        }
+
+        .href {
+            width: 950px;
+            height: 50px;
+            margin-top: 50px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+
+            a {
+                width: 256px;
+                height: 50px;
+                background-position: center;
+            }
+
+            .enroll {
+                flex:1;
+                text-align: center;
+                line-height: 50px;
+                font-size: 14px;
+                font-weight: bold;
+                background: url('/assets/img/toenroll.png');
+                margin: 0px 30px;
+            }
+
+            .video {
+                flex:1;
+                text-align: center;
+                line-height: 50px;
+                font-size: 14px;
+                font-weight: bold;
+                background: url('/assets/img/videodownload.png');
+                margin: 0px 30px;
+            }
+
+            .docs {
+                flex:1;
+                text-align: center;
+                line-height: 50px;
+                font-size: 14px;
+                font-weight: bold;
+                background: url('/assets/img/docsdownload.png');
+                margin: 0px 30px;
             }
         }
     }

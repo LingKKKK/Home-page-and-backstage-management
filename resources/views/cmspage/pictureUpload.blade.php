@@ -44,7 +44,7 @@
                     <option value="contest" {{old('classify') == 'contest' ? 'selected' : ''}}>大赛</option>
                     @if($results)
                     @foreach($results as $key => $result)
-                    <option value="{{$result->id}}">{{$result->competition_name}}</option>
+                    <option value="{{$result->competition_name}}">{{$result->competition_name}}</option>
                     @endforeach
                     @endif
                 </select>
