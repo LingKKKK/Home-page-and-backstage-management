@@ -29,9 +29,14 @@ class IndexController extends Controller
 
     public function match(Request $request)
     {
+        // $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
+        // $eventList = DB::table('cms_event')->orderBy('id', 'asc')->get();
+        // return view('homepage.match', ['results' => $results, 'eventList' => $eventList]);
+
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
-        $eventList = DB::table('cms_event')->orderBy('id', 'asc')->get();
-        return view('homepage.match', ['results' => $results, 'eventList' => $eventList]);
+        $competitionList = DB::table('cms_competition')->orderBy('id', 'asc')->get();
+
+        return view('homepage.match', ['results' => $results, 'competitionList' => $competitionList]);
     }
 
     public function video(Request $request)
@@ -44,9 +49,12 @@ class IndexController extends Controller
 
     public function doc(Request $request)
     {
+        // $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
+        // $docsList = DB::table('docs')->orderBy('id', 'desc')->get();
+        // return view('homepage.doc', ['results' => $results, 'docsList' => $docsList]);
         $results = DB::table('cms_banner')->orderBy('id', 'asc')->get();
-        $docsList = DB::table('docs')->orderBy('id', 'desc')->get();
-        return view('homepage.doc', ['results' => $results, 'docsList' => $docsList]);
+        $eventList = DB::table('cms_event')->orderBy('id', 'asc')->get();
+        return view('homepage.doc', ['results' => $results, 'eventList' => $eventList]);
     }
 
     public function aboutus(Request $request)

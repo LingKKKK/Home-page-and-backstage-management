@@ -1,14 +1,14 @@
 @extends('homepage.layout')
 
 @section('content')
-    <link rel="stylesheet" href="assets/css/doc.css">
+    <link rel="stylesheet" href="assets/css/match.css">
 
     <div class="warp" style="min-height: 671px;">
         <div class="banner">
             <ul class="img">
-             @if($results)
+                @if($results)
                     @foreach($results as $key => $result)
-                        @if($result->classify == 'doc')
+                        @if($result->classify == 'index')
                             <li>
                                 <img src="{{ $result->url or '' }}">
                             </li>
@@ -25,105 +25,34 @@
                     @endforeach
                 @endif
             </ul>
+            <div class="model">
+                <span class="sp1">青少年人工智能编程挑战赛</span>
+                <span class="sp2">精彩回顾</span>
+                <a class="sp3">了解详情</a>
+            </div>
         </div>
-        <div class="info">
-            <div class="title">
-                <h4>备战资源</h4>
-                <div>
-                    <ul class="table">
-                        <li class="on">装备手册</li>
-                        <li class="">教学视频</li>
-                        <li class="">技术文件</li>
-                        <li class="">线下培训</li>
-                    </ul>
+        <div class="info clearfix">
+            @if($eventList)
+            @foreach($eventList as $key => $item)
+            <div class="item">
+                <div class="item_model">
+                    <a id="{{$item->id}}" href="/toCompetition/{{ $item->id }}" class="toCompetition">点击查看赛项内容</a>
+                </div>
+                <a class="all clearfix">
+                    <img class="bg" src="{{$item->event_bg}}">
+                    <div class="intro">
+                        <span> {{$item->event_name}}</span>
+                        <p> {{$item->event_time}}</p>
+                    </div>
+                </a>
+                <div class="href">
+                    <a href="{{$item->event_href}}"><img src="/assets/img/enroll.png"></a>
+                    <a><img src="/assets/img/event_tips.png"></a>
+                    <a><img src="/assets/img/add_tips.png"></a>
                 </div>
             </div>
-            <ul class="doc-list clear">
-                <li class="list active">
-                    <ul>
-                        @foreach($docsList as $item)
-                        <!-- <li><a href="{{ $item->url or '' }}">{{ $item->name or '' }}</a></li> -->
-                        @if($item->classify == '装备手册')
-                            <li>
-                                <img src="assets/img/index/docicon.png" style="width: 90px;height: 90px;margin-top: 5px;margin-left: 5px;">
-                                <div class="details" style="flex-grow: 1;flex-shrink: 1;flex-basis: 0%;">
-                                    <p class="listTitle">{{ $item->name or '' }}</p>
-                                </div>
-                                <div class="download">
-                                    <a target="_blank" href="{{ $item->url or '' }}">
-                                        <img alt="" src="assets/img/index/download.png" style="margin-top: 5px;">
-                                    </a>
-                                    <p>点击查看详情</p>
-                                </div>
-                            </li>
-                        @endif
-                        @endforeach
-                    </ul>
-                </li>
-                <li class="list">
-                    <ul>
-                    @foreach($docsList as $item)
-                    <!-- <li><a href="{{ $item->url or '' }}">{{ $item->name or '' }}</a></li> -->
-                    @if($item->classify == '教学视频')
-                        <li>
-                            <img src="assets/img/index/docicon.png" style="width: 90px;height: 90px;margin-top: 5px;margin-left: 5px;">
-                            <div class="details" style="flex-grow: 1;flex-shrink: 1;flex-basis: 0%;">
-                                <p class="listTitle">{{ $item->name or '' }}</p>
-                            </div>
-                            <div class="download">
-                                <a target="_blank" href="{{ $item->url or '' }}">
-                                    <img alt="" src="assets/img/index/download.png" style="margin-top: 5px;">
-                                </a>
-                                <p>点击查看详情</p>
-                            </div>
-                        </li>
-                    @endif
-                    @endforeach
-                    </ul>
-                </li>
-                <li class="list">
-                    <ul>
-                    @foreach($docsList as $item)
-                    <!-- <li><a href="{{ $item->url or '' }}">{{ $item->name or '' }}</a></li> -->
-                    @if($item->classify == '技术文件')
-                        <li>
-                            <img src="assets/img/index/docicon.png" style="width: 90px;height: 90px;margin-top: 5px;margin-left: 5px;">
-                            <div class="details" style="flex-grow: 1;flex-shrink: 1;flex-basis: 0%;">
-                                <p class="listTitle">{{ $item->name or '' }}</p>
-                            </div>
-                            <div class="download">
-                                <a target="_blank" href="{{ $item->url or '' }}">
-                                    <img alt="" src="assets/img/index/download.png" style="margin-top: 5px;">
-                                </a>
-                                <p>点击查看详情</p>
-                            </div>
-                        </li>
-                    @endif
-                    @endforeach
-                    </ul>
-                </li>
-                <li class="list">
-                    <ul>
-                    @foreach($docsList as $item)
-                    <!-- <li><a href="{{ $item->url or '' }}">{{ $item->name or '' }}</a></li> -->
-                    @if($item->classify == '线下培训')
-                        <li>
-                            <img src="assets/img/index/docicon.png" style="width: 90px;height: 90px;margin-top: 5px;margin-left: 5px;">
-                            <div class="details" style="flex-grow: 1;flex-shrink: 1;flex-basis: 0%;">
-                                <p class="listTitle">{{ $item->name or '' }}</p>
-                            </div>
-                            <div class="download">
-                                <a target="_blank" href="{{ $item->url or '' }}">
-                                    <img alt="" src="assets/img/index/download.png" style="margin-top: 5px;">
-                                </a>
-                                <p>点击查看详情</p>
-                            </div>
-                        </li>
-                    @endif
-                    @endforeach
-                    </ul>
-                </li>
-            </div>
+            @endforeach
+            @endif
         </div>
     </div>
 
@@ -141,15 +70,65 @@
                     $('.img li').eq(index).addClass('active');
                 })
             })
-            $('.table >li').each(function(index,el) {
-                $(this).click(function(){
-                    $('.table >li').removeClass('on');
-                    $(this).addClass('on');
 
-                    $('.doc-list >li').removeClass('active');
-                    $('.doc-list >li').eq(index).addClass('active');
+            $('.nav li').each(function(index, el) {
+                $(this).removeClass('active');
+                $('.nav li').eq(3).addClass('active');
+            });
+
+            if (window.location.hash == '#signup') {
+                $('.info-nav li').eq(0).click();
+            }else if (window.location.hash == '#notice') {
+                $('.info-nav li').eq(1).click();
+            }
+
+            $(".banner").hover(function() {
+                $('.model').animate({
+                    "opacity": "1"
+                }, 500);
+            }, function() {
+                $('.model').animate({
+                    "opacity": "0"
+                }, 500);
+            });
+
+            $(".info .item").each(function(index, el) {
+                $(this).hover(function() {
+                    $(this).find('.item_model').animate({
+                        "opacity": "1"
+                    }, 500);
+                }, function() {
+                    $(this).find('.item_model').animate({
+                        "opacity": "0"
+                    }, 500);
+                });
+            });
+
+            $('.info-nav >li').each(function(index,el) {
+                $(this).click(function(){
+                    $('.info-nav >li').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.right .box').removeClass('active');
+                    $('.right .box').eq(index).addClass('active');
+
+                    if (index == 0) {
+                        window.location.hash == "#signup";
+                    } else if (index == 1) {
+                        window.location.hash == "#notice";
+                    }
                 })
             })
+
+            // $('.item a').each(function(){
+            //     $(this).unbind('click').bind('click', function(){
+            //         var id = $(this).attr('id')
+            //         console.log(id)
+            //         $.get("/toCompetition/" + id, function() {
+
+            //         })
+            //     })
+            // })
         })
     </script>
 @endsection

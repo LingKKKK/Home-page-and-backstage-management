@@ -237,17 +237,6 @@
                 $('.nav li').eq(1).addClass('active');
             });
 
-            if (window.location.hash == '#trends') {
-                console.log(1);
-                $('.info-nav li').eq(0).click();
-            }else if (window.location.hash == '#intro') {
-                console.log(1);
-                $('.info-nav li').eq(1).click();
-            }else if (window.location.hash == '#about') {
-                console.log(1);
-                $('.info-nav li').eq(2).click();
-            }
-
             $('.info-nav >li').each(function(index,el) {
                 $(this).click(function(){
                     $('.info-nav >li').removeClass('active');

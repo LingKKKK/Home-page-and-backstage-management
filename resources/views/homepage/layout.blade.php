@@ -19,7 +19,9 @@
     <div class="top">
         <div class="inner">
             <div class="logo">
-                <img src="/assets/img/common/logo.jpeg">
+                <a href="/">
+                    <img src="/assets/img/common/logo.jpeg">
+                </a>
             </div>
             <div class="search">
                 <img src="/assets/img/common/search.png">
@@ -35,7 +37,7 @@
                     <a href="/event">比赛项目</a>
                 </li>
                 <li>
-                    <a href="/doc">参赛报名</a>
+                    <a href="/enroll">参赛报名</a>
                 </li>
                 <li>
                     <a href="/video">精彩回顾</a>

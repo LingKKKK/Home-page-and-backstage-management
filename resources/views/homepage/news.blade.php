@@ -6,20 +6,32 @@
     <div class="warp" style="min-height: 671px;">
         <div class="banner">
             <ul class="img">
-                <li class="active">
-                    <img src="/assets/img/index/banner_1.jpg">
-                </li>
-                <li>
-                    <img src="/assets/img/index/banner_2.jpg">
-                </li>
+                @if($pics)
+                    @foreach($pics as $key => $result)
+                        @if($result->classify == 'index')
+                            <li>
+                                <img src="{{ $result->url or '' }}">
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
             <ul class="nav-img">
-                <li class="active"></li>
-                <li></li>
+                @if($pics)
+                    @foreach($pics as $key => $result)
+                        @if($result->classify == 'index')
+                            <li></li>
+                        @endif
+                    @endforeach
+                @endif
             </ul>
+            <div class="model">
+                <span class="sp1">青少年人工智能编程挑战赛</span>
+                <span class="sp2">精彩回顾</span>
+                <a class="sp3">了解详情</a>
+            </div>
         </div>
-        <div class="cut" style=""></div>
-        <div class="inner clearfix">
+        <div class="inner clearfix" style="line-height: 25px !important; font-family: robocom !important;">
             @if($results)
                 @foreach($results as $key => $result)
                     <span class="id" style="display: none;">{{ $result->id or '' }}</span>
@@ -30,7 +42,7 @@
                     <span class="times">浏览次数: {{ $result->times or '' }}</span>
                     <div style="clear: both; margin-bottom: 30px;"></div>
                     <!-- <p id="text" style="display: none;">{{ $result->content or '' }}</p> -->
-                    <p class="content" id="content">{!! $result->content or '' !!}</p>
+                    <p class="content" id="content" style="line-height: 25px !important; font-family: robocom !important;">{!! $result->content or '' !!}</p>
                 @endforeach
             @endif
             <span class="error">未加载出数据, 请重新查找</span>
@@ -39,8 +51,59 @@
     </div>
     <script type="text/javascript">
         $(function(){
-            // console.log($('#text').text());
-            // $('#content').html(encodeHtml($('#text').html()));
+
+
+            $('.img >li').eq(0).addClass('active');
+            $('.nav-img >li').eq(0).addClass('active');
+            $('.nav-img >li').each(function(index,el) {
+                $(this).click(function(){
+                    $('.nav-img >li').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.img >li').removeClass('active');
+                    $('.img li').eq(index).addClass('active');
+                })
+            })
+
+            $('.nav li').each(function(index, el) {
+                $(this).removeClass('active');
+                $('.nav li').eq(1).addClass('active');
+            });
+
+            $('.info-nav >li').each(function(index,el) {
+                $(this).click(function(){
+                    $('.info-nav >li').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('.right .box').removeClass('active');
+                    $('.right .box').eq(index).addClass('active');
+
+                    if (index == 0) {
+                        window.location.hash == "#trends";
+                    } else if (index == 1) {
+                        window.location.hash == "#intro";
+                    } else if (index == 2) {
+                        window.location.hash == "#about";
+                    }
+                })
+            })
+
+            $(".banner").hover(function() {
+                // $('.banner .img li img').css({
+                //     "filter": "blur(3px)"
+                // }, 500);
+                $('.model').animate({
+                    "opacity": "1"
+                }, 500);
+            }, function() {
+                // $('.banner .img li img').css({
+                //     "filter": "blur(0px)"
+                // }, 500);
+                $('.model').animate({
+                    "opacity": "0"
+                }, 500);
+            });
+
             function encodeHtml(str) {
                 var encodedStr = "";
                 if (str == "") return encodedStr;

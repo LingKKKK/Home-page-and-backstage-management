@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
+| routes are loaded by the RouteServicePrvoider within a group which
 | contains the "web" middleware group. Now create something great!
 |
 */
@@ -21,11 +21,9 @@
 Route::get('/', 'Home\IndexController@index');
 Route::get('/competition', 'Home\IndexController@eventInformation');
 Route::get('/event', 'Home\IndexController@match');
-Route::get('/doc', 'Home\IndexController@doc');
+Route::get('/enroll', 'Home\IndexController@doc');
 Route::get('/video', 'Home\IndexController@video');
-Route::get('/aboutus', 'Home\IndexController@aboutus');
-
-
+Route::get('/aboutus', 'Home\IndexController@aboutus')  ;
 
 // 注册 登录 退出
 Route::get('/register', 'Auth\AuthController@register')->name('register');

@@ -112,8 +112,9 @@ class CmsController extends Controller
     public function showNews($id)
     {
         $results = DB::table('cms_news')->where('id', '=', $id)->get();
+        $pics = DB::table('cms_banner')->orderBy('id', 'asc')->get();
 
-        return view('homepage.news', ['results' => $results]);
+        return view('homepage.news', ['results' => $results, 'pics' => $pics]);
     }
 
     public function pictureManage()
