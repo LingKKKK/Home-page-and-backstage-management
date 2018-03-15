@@ -54,6 +54,9 @@
             </div>
             @endforeach
             @endif
+            <div class="content_error">
+                <span style="color: red; font-family: robocom; line-height: 30px; font-size: 20px; font-weight: bold;text-align: center; display: block;margin: 0 auto;width: 100%;margin-bottom: 70px;">没有相关数据, 请联系管理员或者重新查找</span>
+            </div>
             <div class="href">
                 <a class="docs" href="{{ $result->intro_doc or '' }}" target="_blank"></a>
                 <a class="video" href="{{ $result->intro_video or '' }}" target="_blank"></a>
@@ -100,6 +103,8 @@
                 }, 500);
             });
 
+
+
             function encodeHtml(str) {
                 var encodedStr = "";
                 if (str == "") return encodedStr;
@@ -118,6 +123,22 @@
                     $('.error').css('display', 'none');
                 }
             }, 1000)
+
+            if($('.content_box').length == 0){
+                $('.content_error').show();
+            }else {
+                $('.content_error').hide();
+            }
+
+            if ($('.nav_pic .box_pix').find('.box_item').length == 0) {
+                $('.nav_pic').hide();
+                $('.pre').hide();
+                $('.next').hide();
+            }else {
+                $('.nav_pic').show();
+                $('.pre').show();
+                $('.next').show();
+            }
 
             var index = 1;
             $('.pre').click(function(){
