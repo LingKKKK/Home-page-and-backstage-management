@@ -40,7 +40,7 @@ Route::get('/documentUpload', 'Cms\CmsController@documentUpload');
 Route::get('/newsManage', 'Cms\CmsController@newsManage');
 Route::get('/newsUpload', 'Cms\CmsController@newsUpload');
 Route::get('/bannerManage', 'Cms\CmsController@bannerManage');
-Route::get('/bannerUpload', 'Cms\CmsController@bannerManage');
+Route::get('/bannerUpload', 'Cms\CmsController@bannerUpload');
 Route::get('/videoManage', 'Cms\CmsController@videoManage');
 Route::get('/videoUpload', 'Cms\CmsController@videoUpload');
 Route::get('/pictureManage', 'Cms\CmsController@pictureManage');

@@ -8,7 +8,7 @@
             <ul class="img">
                 @if($pics)
                     @foreach($pics as $key => $result)
-                        @if($result->classify == 'index')
+                        @if($result->classify == '新闻页面')
                             <li>
                                 <img src="{{ $result->url or '' }}">
                             </li>
@@ -19,7 +19,7 @@
             <ul class="nav-img">
                 @if($pics)
                     @foreach($pics as $key => $result)
-                        @if($result->classify == 'index')
+                        @if($result->classify == '新闻页面')
                             <li></li>
                         @endif
                     @endforeach

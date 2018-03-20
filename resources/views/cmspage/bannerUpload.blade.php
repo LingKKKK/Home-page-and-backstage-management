@@ -39,12 +39,14 @@
             <div class="form-group clearfix">
                 <span>文件组别:</span>
                 <select name="classify" id="classify" style="height: 35px;text-align: center;width: auto;padding: 0 2%;margin: 0;margin-top: 12px;font-size: 14px;padding-left: 4%;padding-right: 4%; margin-left: 20px;">
-                    <option value="index" {{old('classify') == 'index' ? 'selected' : ''}}>  首页  </option>
-                    <option value="eventInformation" {{old('classify') == 'eventInformation' ? 'selected' : ''}}>赛事信息</option>
-                    <option value="match" {{old('classify') == 'match' ? 'selected' : ''}}>参赛报名</option>
-                    <option value="doc" {{old('classify') == 'doc' ? 'selected' : ''}}>资源下载</option>
-                    <option value="video" {{old('classify') == 'video' ? 'selected' : ''}}>视频资源</option>
-                    <option value="aboutus" {{old('classify') == 'aboutus' ? 'selected' : ''}}>关于我们</option>
+                    <option value="首页">  首页  </option>
+                    <option value="关于竞赛">  关于竞赛  </option>
+                    <option value="比赛项目">  比赛项目  </option>
+                    <option value="参赛报名">  参赛报名  </option>
+                    <option value="精彩回顾">  精彩回顾  </option>
+                    <option value="子赛项详情">  子赛项详情  </option>
+                    <option value="新闻页面">  新闻页面  </option>
+                    <option value="赛项内容展示">  赛项内容展示  </option>
                 </select>
             </div>
 

@@ -460,7 +460,7 @@ h5.left-nav-title {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
   border-right-color: #65CEA7;
   border-width: 6px;
   margin-top: -6px;
@@ -3885,7 +3885,7 @@ ul.labels-info li a i {
 }
 
 ul.labels-info li a:hover, ul.labels-info li a:focus {
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   color: #5c6e8a;
 }
 
